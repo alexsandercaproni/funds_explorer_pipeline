@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"7ae9c6eb2d","applicationID":"1576126089","transactionName":"IAkLQhFbWVUBQhdKVwcDFl8EWhpfEV5cSx0QDgpB","queueTime":2,"applicationTime":13,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"7ae9c6eb2d",applicationID:"1576126089"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1211.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<title>HTMX11 - FDO INV IMOB - FII HOTEL MAXINVEST - Funds Explorer</title>
+<!-- Facebook Pixel Code -->
+<script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '116146375533905'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+    </script>
+<noscript><img height="1" src="https://www.facebook.com/tr?id=116146375533905&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+<!-- Google Tag Manager -->
+<script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PRZL8BR');
+    </script>
+<!-- End Google Tag Manager -->
+<meta content="pt_BR" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.fundsexplorer.com.br/funds/HTMX11" property="og:url"/>
+<meta content="Funds Explorer" property="og:site_name"/>
+<meta content="https://www.fundsexplorer.com.br/assets/og-image-0816da80381841e4393b12135f6f570531125da8618d8fda87c2da7c88700073.jpg" property="og:image"/>
+<meta content="https://www.fundsexplorer.com.br/assets/og-image-0816da80381841e4393b12135f6f570531125da8618d8fda87c2da7c88700073.jpg" property="og:image:secure_url"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@FundsExplorer" name="twitter:site"/>
+<meta content="https://www.fundsexplorer.com.br/assets/og-image-0816da80381841e4393b12135f6f570531125da8618d8fda87c2da7c88700073.jpg" name="twitter:image"/>
+<meta content="@FundsExplorer" name="twitter:creator"/>
+<meta content="index, follow" name="robots"/>
+<meta content="fundsexplorer.com.br" name="publisher"/>
+<meta content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" name="viewport">
+<link href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;display=swap" rel="stylesheet"/>
+<link as="font" crossorigin="" href="https://www.fundsexplorer.com.br/assets/roboto-regular-2cd6b07b7855716761250290ce3cf447ccc98e793e484294d3fa8ccbb55b016a.woff" rel="preload" type="font/woff"/><link href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="font" crossorigin="" href="https://www.fundsexplorer.com.br/assets/roboto-bold-e7cbaf29c3812b80577cb845b5d359486242338f25620ba65260e265464fe359.woff" rel="preload" type="font/woff"/>
+<link as="font" crossorigin="" href="https://www.fundsexplorer.com.br/assets/poppins-regular-ad5fb58ad11730ef707d4f28db7a83ec4804bb3e8373dc69bedd94cd7a872efc.woff" rel="preload" type="font/woff"/>
+<link as="font" crossorigin="" href="https://www.fundsexplorer.com.br/assets/poppins-light-bacb75313cbb300794cdc48e6a65ec670548d466e5da3b14e42d1f245d222b96.woff" rel="preload" type="font/woff"/>
+<link as="font" crossorigin="" href="https://www.fundsexplorer.com.br/assets/poppins-medium-6dfdf411a70ae4d26942efdf1034e66976435758d29f2a7d556d77e08b9e2412.woff" rel="preload" type="font/woff"/>
+<link as="font" crossorigin="" href="https://www.fundsexplorer.com.br/assets/poppins-semibold-90751a7ac26ffaed4f9f9a282b3176010ea979f9df4038d33a74e02645f8a12f.woff" rel="preload" type="font/woff"/>
+<link as="font" crossorigin="" href="https://www.fundsexplorer.com.br/assets/poppins-bold-28bf02b4bfe810f92b75ec4a857b9ccece7a75392663a5140d45776170a407c9.woff" rel="preload" type="font/woff"/>
+<link href="https://www.fundsexplorer.com.br/funds/htmx11" rel="canonical">
+<meta content="O HTMX11 é um fundo imobiliário do segmento de Hotel. Confira nesta página tudo que você precisa saber sobre o HTMX11." name="description">
+<meta content="O HTMX11 é um fundo imobiliário do segmento de Hotel. Confira nesta página tudo que você precisa saber sobre o HTMX11." property="og:description"/>
+<meta content="O HTMX11 é um fundo imobiliário do segmento de Hotel. Confira nesta página tudo que você precisa saber sobre o HTMX11." name="twitter:description"/>
+<meta content="HTMX11 - FDO INV IMOB - FII HOTEL MAXINVEST - Funds Explorer" property="og:title"/>
+<meta content="HTMX11 - FDO INV IMOB - FII HOTEL MAXINVEST - Funds Explorer" name="twitter:title"/>
+<link href="/assets/favicon/apple-touch-icon-44ef885b225b78ca364401a65eb92e8e1a32447e44e4cc450c0d0af3d82c5c31.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/assets/favicon/favicon-32x32-62f6aacd7a6c99219e86b4a6c140f7a8acfc6053f8d98a5655e536ca6d8fa675.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/favicon/favicon-16x16-20d8ccbcf748d21abeda416d0972cee05a5a0f85e718d55f16191e762ab97cd7.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/assets/favicon/site-865960af7b2e68f85fff7a4bc84e9d9209c01649f303579749b0f19c3d46b168.webmanifest" rel="manifest"/>
+<link color="#09aac8" href="/assets/favicon/safari-pinned-tab-43a00e43cf209aa71bb4e37ea4d86708c6cfa9e50877ed4ad6668dbed64a394a.svg" rel="mask-icon"/>
+<link href="/assets/favicon/favicon-42a2d8bc26ccaf8666f9f0a22559e1c144f1bd2b7a73008674b6e5ee9eb21bd2.ico" rel="shortcut icon"/>
+<meta content="#2b5797" name="msapplication-TileColor"/>
+<meta content="/assets/favicon/mstile-144x144-b57ec78adf4959903834172ecf9e783789dc2a54552a84adf4e2529e1af3c19e.png" name="msapplication-TileImage"/>
+<meta content="/assets/favicon/browserconfig-b277ccf9dd97fd937ead695a86ffb5e5b734d5aa624e225a6d4685424880f674.xml" name="msapplication-config"/>
+<meta content="#ffffff" name="theme-color"/>
+<link data-turbolinks-track="false" href="/assets/redesign/application-b8df72d2851b422ea7bc86771f5fbf066a21e35cf6df0f3e3026f89bd27d67ad.css" media="all" rel="stylesheet">
+<meta content="authenticity_token" name="csrf-param">
+<meta content="6p/27Nw8SWWlI6Jt4M6x1OI01Q4Khb2CMvK6lw2Hd5a7vaFORVNhRdCqfXtEo+5wsYYW8ChW7F90AgBz3CY/Lg==" name="csrf-token">
+</meta></meta></link></meta></link></meta></head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PRZL8BR" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header>
+<div id="hello-bar">
+<div class="hello-bar-background">
+<div id="hello-bar-title-box">
+<svg fill="none" height="35" viewbox="0 0 39 35" width="39" xmlns="http://www.w3.org/2000/svg">
+<path d="M27.3423 17.6445H31.1908V25.3416H27.3423V17.6445Z" fill="#4F320D"></path>
+<path d="M35.0394 8.02328V4.17472C35.0394 2.05225 33.3134 0.326172 31.1909 0.326172H6.17529C2.99254 0.326172 0.402466 2.91625 0.402466 6.099V29.1903C0.402466 33.4256 3.85462 34.9631 6.17529 34.9631H35.0394C37.1619 34.9631 38.888 33.2371 38.888 31.1146V11.8718C38.888 9.74935 37.1619 8.02328 35.0394 8.02328ZM6.17529 4.17472H31.1909V8.02328H6.17529C5.67983 8.00111 5.21201 7.78869 4.86924 7.43025C4.52647 7.0718 4.33517 6.59496 4.33517 6.099C4.33517 5.60304 4.52647 5.1262 4.86924 4.76775C5.21201 4.40931 5.67983 4.19689 6.17529 4.17472ZM35.0394 31.1146H6.19838C5.30937 31.0915 4.25102 30.7394 4.25102 29.1903V11.5158C4.85524 11.7333 5.49602 11.8718 6.17529 11.8718H35.0394V31.1146Z" fill="#4F320D"></path>
+</svg>
+</div>
+<span id="hello-bar-sub-title">Quer viver de renda com uma carteira que <span id="hello-bar-sub-sub-title">supera o IFIX desde a sua criação?</span></span>
+<a href="https://lp.fundsexplorer.com.br/carteira-de-investimento-em-fiis/?utm_source=site&amp;utm_medium=hellobar&amp;utm_campaign=assinaturafundsexplorer.20210826&amp;utm_content=" onclick="closeHelloBar()" target="_blank">
+<button class="hellobar-button-link">Quero viver de renda</button>
+</a>
+<svg fill="none" height="12" id="hello-bar-close-button" onclick="closeHelloBar()" viewbox="0 0 13 12" width="13" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#442C0D" x1="1.35355" x2="12.3536" y1="0.646447" y2="11.6464"></line>
+<line stroke="#442C0D" x1="0.646447" x2="11.6464" y1="11.6464" y2="0.646445"></line>
+</svg>
+</div>
+</div>
+<div id="menu">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-xs-8">
+<a href="/" id="header-logo"><img alt="Logo Funds Explorer" src="/assets/logo-974c9a6614072272315844e7bd6f6544cbd3cac96f2c5eb0ddc2d8d1a94b454c.png"/></a>
+</div>
+<div class="col-md-6 hidden-xs items-no-padding">
+<div id="menu-items">
+<ul>
+<li>
+<a class="menu-item hoverable-submenu" data-item="ferramentas" href="javascript:;"><span>Ferramentas</span></a>
+<div class="menu-selected-marker" id="menu-marker-ferramentas"></div>
+</li>
+<li>
+<a class="menu-item hoverable-submenu" data-item="assinaturas" href="https://lp.fundsexplorer.com.br/assinaturas-funds-explorer/" target="_blank"><span>Assinaturas</span></a>
+<div class="menu-selected-marker" id="menu-marker-assinaturas"></div>
+</li>
+<li>
+<a class="menu-item" href="https://lp.fundsexplorer.com.br/funds-explorer-mentoria/" id="mentoring-button" target="_blank"><span>Mentoria</span></a>
+</li>
+<li>
+<a class="menu-item hoverable-submenu" data-item="cursos-online" href="https://lp.fundsexplorer.com.br/cursos-funds-explorer/" target="_blank"><span>Cursos</span></a>
+<div class="menu-selected-marker" id="menu-marker-cursos-online"></div>
+</li>
+<li>
+<a class="menu-item" href="https://www.fundsexplorer.com.br/artigos" id="blog-button"><span>Artigos</span></a>
+</li>
+<li>
+<a class="menu-item hoverable-submenu" data-item="gratuito" href="https://lp.fundsexplorer.com.br/cl/?utm_source=site&amp;utm_medium=cl&amp;utm_campaign=cl.20211021&amp;utm_content=" id="free-button" target="_blank"><span>Gratuito</span></a>
+<div class="menu-selected-marker" id="menu-marker-gratuito"></div>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-3 col-xs-4">
+<div id="menu-user-actions">
+<button id="btn-toggle-search">
+<img alt="Buscar" id="search-mobile" src="/assets/icons/search-d5669d54dc062ed62f9e4e7173db8c9fa39cc760779dff386436f5faf48640bf.png"/>
+<img alt="Buscar" id="search-desktop" src="/assets/icons/search-azul-6c8a9ad9f20cdb72bdb7a8fb980d8256f13f569aead6fd767533c48e8a2d8206.png"/>
+</button>
+<a class="hidden" href="/area-assinante" id="subscribe-link"><img alt="Área do Assinante" src="/assets/icons/recomendacoes-61834a825604fdc064542346b6eeb512efa1003e5672378d2c6f33cec14c910a.png"/><span>Área do Assinante</span></a>
+<button id="btn-toggle-menu-mobile">
+<img alt="Menu mobile" src="/assets/icons/new-menu-mobile-2c055d9a203314f1d20d2edceb4aa9b8018bb241e9c64d42a405e93bf1ff35f2.png"/>
+</button>
+<span id="loading-user-menu">Autenticando...</span>
+<a class="btn hidden" data-item="subscriber" href="/meus-dados" id="btn-my-account"><img class="profile" src="/assets/icons/profile-e1626371c4a19db72fe7eb8943096747b6d7a8076d88e08f202a98baf342d782.png"/><span></span><img alt="usuario" class="seta hidden" src="/assets/icons/seta-1dc3b61873daa6f322a3e31bd11981f1c47eaba5863a3057c60c38f0816071e0.png"/></a>
+<a class="btn hidden" href="/users/sign_out" id="btn-logout">Sair</a>
+<a class="btn hidden" href="javascript:;" id="btn-signin">Entrar</a>
+<a class="btn hidden" href="https://lp.fundsexplorer.com.br/carteira-de-investimento-em-fiis/" id="btn-sign-now" target="_blank">Assine agora</a>
+</div>
+</div>
+</div>
+<div id="signin-container">
+<div class="menu-user-actions-wrapper" id="signin-wrapper">
+<div class="menu-selected-marker" id="menu-marker-signin"></div>
+<div class="close-signin-signup-wrapper">
+<a class="close-signin-signup" href="javascript:;" id="close-signin"><img alt="Fechar login" src="/assets/icons/fechar-b42fc0c933cfffdbf591556fc1b9f2dc2ed1601e6b39ae0c48289bcf6802b1fe.png"/></a>
+</div>
+<form accept-charset="UTF-8" action="/users/sign_in" id="form-signin" method="post"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="rOC9RVZNFSXy2Cz6ohTHZcDZDLDru6ocIZI9afSdgHL9wurnzyI9BYdR8+wGeZjBk2vPTslo+8FnYoeNJTzIyg=="/>
+<span id="signin-title">Identifique-se</span>
+<div class="row">
+<div class="form-group col-md-12 col-xs-12">
+<input autocomplete="username email" class="fe-input signin-signup-input form-control" id="email-signin" name="user[email]" placeholder="Seu email" type="email"/>
+</div>
+</div>
+<div class="row">
+<div class="form-group col-md-12 col-xs-12">
+<input autocomplete="password" class="fe-input signin-signup-input form-control" id="password-signin" name="user[password]" placeholder="Digite a senha" type="password"/>
+<img alt="show password" class="show-pass" height="14.91px" src="/assets/icons/login/olho-fechado-2556d452225d579843a774e70dc18e0a324fa6ecb6662f9833c8c8dc4b58dc20.svg" width="18.57px"/>
+<img alt="hide password" class="hide-pass" height="14.47px" src="/assets/icons/login/olho-aberto-8b13019e490b5ba735070adf68d48791215be988542d48ed4ed0e303c4d08d4b.svg" width="18.57px"/>
+</div>
+</div>
+<div class="row">
+<div class="checkbox col-md-12 col-xs-12">
+<label for="remember-me">
+<input name="user[remember_me]" type="hidden" value="0"/><input id="remember-me" name="user[remember_me]" type="checkbox" value="1"/>Lembrar
+                </label>
+<a href="javascript:;" id="forgot-password">Esqueceu a senha?</a>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<button class="fe-input" id="signin-user" type="submit">ACESSAR</button>
+<div class="tooltip-success" data-placement="bottom" data-toggle="tooltip" data-trigger="manual" title="Login efetuado com sucesso!"></div>
+<div class="tooltip-error" data-placement="bottom" data-toggle="tooltip" data-trigger="manual" title="Dados inválidos"></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div class="bottom-signin">
+<span>Ainda não tem conta?</span>
+<a class="btn" href="javascript:;" id="btn-signup">Cadastre-se</a>
+</div>
+</div>
+</div>
+</form> <form accept-charset="UTF-8" action="/users/password" id="form-reset-password" method="post"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="U0xxwRfs5sRTXRf1xxmwwK5FRqd0IYOv2797092P3N8CbiZjjoPO5CbUyONjdO9k/feFWVby0nKdT8E3DC6UZw=="/>
+<span id="reset-password-title">Esqueceu sua senha?</span>
+<div class="row">
+<div class="form-group col-md-12 col-xs-12">
+<input autocomplete="username email" class="fe-input signin-signup-input form-control" id="email-reset-password" name="user[email]" placeholder="Digite seu e-mail" type="email"/>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<button class="fe-input" id="reset-password" type="submit">RESETAR SENHA</button>
+<div class="tooltip-success" data-placement="bottom" data-toggle="tooltip" data-trigger="manual" title="E-mail com instruções para resetar senha enviado!"></div>
+<div class="tooltip-error" data-placement="bottom" data-toggle="tooltip" data-trigger="manual" title="Erro ao resetar senha"></div>
+</div>
+</div>
+</form> </div>
+</div>
+<div id="signup-container">
+<div class="menu-user-actions-wrapper" id="signup-wrapper">
+<div class="menu-selected-marker" id="menu-marker-signup"></div>
+<div class="close-signin-signup-wrapper">
+<a class="close-signin-signup" href="javascript:;" id="close-signup"><img alt="Fechar login" src="/assets/icons/fechar-b42fc0c933cfffdbf591556fc1b9f2dc2ed1601e6b39ae0c48289bcf6802b1fe.png"/></a>
+</div>
+<span id="signup-title">Criar uma conta grátis!</span>
+<form accept-charset="UTF-8" action="/users" id="form-signup" method="post"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="zPdzWpDrVHsXg2KQTORjYreuDUA3csSqsbB4aHItGzCd1ST4CYR8W2IKvYboiTzG5BzOvhWhlXf3QMKMo4xTiA=="/>
+<div class="row">
+<div class="form-group col-md-12 col-xs-12">
+<input autocomplete="name" autofocus="autofocus" class="fe-input signin-signup-input form-control tooltip-error name" data-placement="left" data-toggle="tooltip" data-trigger="manual" id="name-signup" name="user[name]" placeholder="Seu nome" type="text"/>
+</div>
+</div>
+<div class="row">
+<div class="form-group col-md-12 col-xs-12">
+<input autocomplete="username email" class="fe-input signin-signup-input form-control tooltip-error email" data-placement="left" data-toggle="tooltip" data-trigger="manual" id="email-signup" name="user[email]" placeholder="Seu e-mail" type="email"/>
+</div>
+</div>
+<div class="row">
+<div class="form-group col-md-12 col-xs-12">
+<input autocomplete="password" class="fe-input signin-signup-input form-control tooltip-error password" data-placement="left" data-toggle="tooltip" data-trigger="manual" id="password-signup" name="user[password]" placeholder="Crie uma senha" type="password"/>
+<img alt="show password" class="show-pass" height="14.91px" src="/assets/icons/login/olho-fechado-2556d452225d579843a774e70dc18e0a324fa6ecb6662f9833c8c8dc4b58dc20.svg" width="18.57px"/>
+<img alt="hide password" class="hide-pass" height="14.47px" src="/assets/icons/login/olho-aberto-8b13019e490b5ba735070adf68d48791215be988542d48ed4ed0e303c4d08d4b.svg" width="18.57px"/>
+</div>
+</div>
+<div class="row">
+<div class="checkbox col-md-12 col-xs-12">
+<label for="remember-me">
+<input id="remember-me" name="remember-me" type="checkbox"/> Li e concordo com os <a href="/termos-de-uso" target="_blank"><span id="Termos de Uso">Termos de Uso</span></a>
+</label>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<button class="fe-input" id="signup-user" type="submit">CRIAR CONTA</button>
+<div class="tooltip-success" data-placement="bottom" data-toggle="tooltip" data-trigger="manual" title="Conta criada! Acesse seu e-mail para confirmação."></div>
+</div>
+</div>
+<div class="row">
+<div class="checkbox col-md-12 col-xs-12">
+<label for="fazer-login">
+<a href="javascript:;"><span id="btn-signin" name="fazer-login">Fazer Login</span></a>
+</label>
+</div>
+</div>
+</form> </div>
+</div>
+</div>
+<div id="submenu">
+<div class="submenu-items hoverable-submenu" data-item="ferramentas" id="submenu-ferramentas">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-xs-12 submenu-item">
+<a href="/funds"><img alt="Lista Fiis" src="/assets/icons/home/lista-fiis-new-254040adc3dfaeea8f29b6be6b252d227f008c7b8ab17e37d45c8aa37fe7b906.png"/><span>LISTA DE FIIs</span></a>
+<p>Lista com todos os FIIs negociados na Bolsa de Valores.</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item">
+<a href="/ranking"><img alt="Ranking Fiis" src="/assets/icons/home/ranking-fiis-3f41ad795a57e41fa44fa51e029119701679c7ee3b4a4b9d7a7f6b39ba8f131a.png"/><span>RANKING DE FIIs</span></a>
+<p>Conheça os melhores FIIs de acordo com cada indicador</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item">
+<a href="/rendimentos-e-amortizacoes"><img alt="Rendimentos" src="/assets/icons/home/rendimentos-02a11c877654f38f53a85f3deb5300be5a5b1a153c5876390ca970db6d7eeaf4.png"/><span>RENDIMENTOS</span></a>
+<p>Confira as distribuições de rendimentos de cada FII.</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item">
+<a href="/mapa-fiis"><img alt="Mapa de Fiis" src="/assets/icons/home/mapa-fiis-1633afa2546c1a4909ae1fffea43f36f0a96e58952a5045aaac16f9ef4355714.png"/><span>MAPA DE FIIs</span></a>
+<p>Identifique a localização exata dos ativos de cada FII.</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-xs-12 submenu-item">
+<a href="/estudos"><img alt="Estudos" src="/assets/icons/home/estudos-new-93a29b1a9121dc8bb9cdabbca332b93a13ae435ecc028b8ffb784f45cf736939.png"/><span>ESTUDOS</span></a>
+<p>Crie e tenha acesso a estudos personalizados por nossa equipe.</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item">
+<a href="/carteiras"><img alt="Carteiras" src="/assets/icons/home/carteiras-new-cc0498ee6e992c403ffde489ee9d97d0a2dab917195a300daf0a3de636a88c63.png"/><span>CARTEIRAS</span></a>
+<p>Monte e acompanhe o desempenho das suas carteiras.</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item">
+<a href="/simulador"><img alt="Simulador" src="/assets/icons/home/simulador-new-120a4209228d82bb555880d9fd0d2bc6b42a0000a1fff22f5b4ee9a9afa99a6e.png"/><span>SIMULADOR</span></a>
+<p>Compare a valorização de cada FII com benchmarks.</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item">
+<a href="/placar-fiis"><img alt="Placar de Fiis" src="/assets/icons/home/placar-new-93e02f6fa854642cbcedcc86f1ff7df7407fc781f9b54a54cd62845c9fab21da.png"/><span>PLACAR DE FIIs</span></a>
+<p>Classifique cada FII de acordo com seus indicadores.</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-xs-12 submenu-item">
+<a href="/comunicados"><img alt="Comunicados" src="/assets/icons/comunicados-518f1cadab658a682d6b865a18cfd167a3c8e4b3bdb0c78832d64523a00d7086.svg"/><span>COMUNICADOS</span></a>
+<p>Consulte os últimos comunicados dos FIIs.</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item">
+<a href="/emissoes-ipos"><img alt="Emissões e IPOs" src="/assets/icons/emissoes-bb45508c6176e7e41a5c01bbca5c5820a13d92ceb0dc9a8e7fb3faa1ff338902.svg"/><span>EMISSÕES E IPOs</span></a>
+<p>Consulte as emissões, IPOs e integralizações dos FIIs.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu-items hoverable-submenu" data-item="assinaturas" id="submenu-assinaturas">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-xs-12 submenu-item">
+<a href="https://lp.fundsexplorer.com.br/carteira-de-investimento-em-fiis/" target="_blank"><img alt="Assinatura Funds Explorer" src="/assets/icons/assinatura-funds-header-b2a6a0a7680a51e6e6d3c00773f87f1a144bb817421f9e792750359de27e2549.png"/><span>Assinatura Funds Explorer</span></a>
+<p>Encontre as melhores oportunidades do mercado de Fundos Imobiliários e aprimore seus ganhos de forma equilibrada, rentável e sustentável.</p>
+</div>
+<div class="col-md-6 col-xs-12 submenu-item">
+<a href="https://lp.fundsexplorer.com.br/funds-data/" target="_blank"><img alt="Funds Data Buildings" src="/assets/icons/funds-data-header-d5eae5910cf18dcbfad421f3d6433ad6c30e16961e4cdeb4c9f1316d09e4442a.png"/><span>Funds Data Buildings</span></a>
+<p>Conheça o Funds Data Buildings para tomar suas decisões com base em dados.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu-items hoverable-submenu" data-item="cursos-online" id="submenu-cursos-online">
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-xs-12 submenu-item">
+<a href="https://lp.fundsexplorer.com.br/curso-fundsexplorer-learning/" target="_blank"><img alt="Funds Explorer Learning" src="/assets/icons/funds-learning-7a9add88a8bfa177c95db19424bbcc6a9fbbba7e2b9f06d4c1c02af9dd903e28.svg"/><span>FUNDS EXPLORER LEARNING</span></a>
+<p>Aprenda como investir em FIIs, mude a sua visão dos Fundos Imobiliários, saiba a melhor maneira de investir o seu dinheiro.</p>
+</div>
+<div class="col-md-4 col-xs-12 submenu-item">
+<a href="https://lp.fundsexplorer.com.br/combo-funds-pocket/" target="_blank"><img alt="Funds Pocket CRIs" src="/assets/icons/funds-pocket-cris-c817a12e6a146b23fb41606b66ee35ec54afe20c8d05ee4e69d42d47ab9eb20b.svg"/><span>FUNDS POCKET CRIs</span></a>
+<p>Vamos te ensinar tudo sobre o funcionamento dos CRIs e como aproveitar da melhor maneira a sua rentabilidade.</p>
+</div>
+<div class="col-md-4 col-xs-12 submenu-item">
+<a href="https://lp.fundsexplorer.com.br/combo-funds-pocket/" target="_blank"><img alt="Funds Pocket Shoppings" src="/assets/icons/funds-pocket-shoppings-ae846046db2d209796fe2b744af1bf1747c3b307b11a6d8beb5c6fadd9f0d4f2.svg"/><span>FUNDS POCKET SHOPPINGS</span></a>
+<p>Você vai aprender tudo sobre o mercado de shoppings e como encontrar as ótimas oportunidades desse setor antes de investir.</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4 col-xs-12 submenu-item">
+<a href="https://lp.fundsexplorer.com.br/combo-funds-pocket/" target="_blank"><img alt="Funds Pocket Escritórios" src="/assets/icons/funds-pocket-escritorios-a269df251fef13d744c51bee1c411cb8e8acef2999a3eac2baf9eb481b2b51fd.svg"/><span>FUNDS POCKET ESCRITÓRIOS</span></a>
+<p>Vamos abordar desde os conceitos mais básicos sobre classificação de escritórios até o panorama atual do segmento.</p>
+</div>
+<div class="col-md-4 col-xs-12 submenu-item">
+<a href="https://lp.fundsexplorer.com.br/combo-funds-pocket/" target="_blank"><img alt="Funds Pocket Galpões" src="/assets/icons/funds-pocket-galpoes-3cc8578aaa094210268589353668c3ee3f6e672ffd0339836cc826454fd15bcd.svg"/><span>FUNDS POCKET GALPÕES</span></a>
+<p>Apesar de ser um segmento em alta, é necessário analisar bem os ativos dos fundos deste setor antes de investir.</p>
+</div>
+<div class="col-md-4 col-xs-12 submenu-item">
+<a href="https://lp.fundsexplorer.com.br/combo-funds-pocket/" target="_blank"><img alt="Funds Pocket Desenvolvimento e FoF" src="/assets/icons/funds-pocket-desenvolvimento-fof-ac6023b1609840fd539f77602bcebd31cfbceb4db2592c80cc1ecccb4096dc64.svg"/><span>FUNDS POCKET DESENV. E FOF</span></a>
+<p>Vamos ensinar como aproveitar da melhor maneira os Fundos de Desenvolvimento e os Fundos de Fundos.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu-items hoverable-submenu" data-item="gratuito" id="submenu-gratuito">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-xs-12 submenu-item-2">
+<a href="https://lp.fundsexplorer.com.br/cl/ebook-gratuito-fiis/?utm_source=site&amp;utm_medium=cl&amp;utm_campaign=&amp;utm_content=" target="_blank"><span>EBOOK GRÁTIS</span></a>
+<p>Análise e avaliação dos Fundos Imobiliários através da ótica de dois especialistas do Funds.</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item-2">
+<a href="https://lp.fundsexplorer.com.br/cl/lista-vip/" target="_blank"><span>LISTA VIP</span></a>
+<p>Informações exclusivas e relevantes todos os dias gratuitamente em seu email.</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item-2">
+<a href="https://t.me/jfiis" target="_blank"><span>TELEGRAM</span></a>
+<p>Conteúdos exclusivos sobre o mercado de FIIs, com a presença de Jacinto Santos.</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item-2" style="width: 366px; margin-left: -17px;">
+<a href="https://lp.fundsexplorer.com.br/cl/calculadora-de-lucro/" target="_blank"><span>CALCULADORA DE LUCRO</span></a>
+<p>Faça o cálculo do preço médio, taxas proporcionais e do Lucro dos FIIs de sua carteira.</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-xs-12 submenu-item-2">
+<a href="https://lp.fundsexplorer.com.br/cl/fiicast/" target="_blank"><span>FIICAST</span></a>
+<p>Conheça o FIICAST - Um podcast Funds Explorer.</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item-2">
+<a href="https://lp.fundsexplorer.com.br/cl/relatorio-principais-tipos-de-fiis/" target="_blank"><span>TIPOS DE FIIs</span></a>
+<p>Mostraremos cada setor, suas respectivas características, o funcionamento de cada tipo de FII e os segmentos que eles atuam</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item-2">
+<a href="https://lp.fundsexplorer.com.br/cl/minicurso-investindo-em-fundos-imobiliarios/" target="_blank"><span>MINICURSO GRATUITO</span></a>
+<p>Aprenda a melhor forma de investir no mercado de imóveis e ter uma renda extra todo mês.</p>
+</div>
+<div class="col-md-3 col-xs-12 submenu-item-2">
+<a href="https://lp.fundsexplorer.com.br/cl/planilha-snapshot-fiis/" target="_blank"><span>PLANILHA SNAPSHOTFII</span></a>
+<p>Utilize nossa planilha para ter um resumo de informações e dados relevantes na hora de analisar um FII.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="submenu-subscriber">
+<div class="container">
+<div class="items">
+<a href="/area-assinante"><span>Área do Assinante</span></a>
+<a href="/meus-dados"><span>Meus Dados</span></a>
+<a href="/contato"><span>Contato</span></a>
+<a href="/users/sign_out"><span>Sair</span></a>
+</div>
+</div>
+</div>
+<div id="menu-mobile">
+<button class="btn" id="menu-mobile-close"><span>×</span></button>
+<div id="menu-mobile-first-level">
+<ul>
+<li>
+<a class="menu-item has-second-level" data-item="ferramentas" href="javascript:;"><span>Ferramentas</span><img alt="Seta para a direita" class="has-second-level-icon" src="/assets/icons/seta-acesso-rapido-3a4dc9469ed73be961425e3697a12b0b4bad882014dc308677b09865d2b3912a.png"/></a>
+</li>
+<li>
+<a class="menu-item has-second-level" data-item="assinatura" href="javascript:;"><span>Assinatura</span><img alt="Seta para a direita" class="has-second-level-icon" src="/assets/icons/seta-acesso-rapido-3a4dc9469ed73be961425e3697a12b0b4bad882014dc308677b09865d2b3912a.png"/></a>
+</li>
+<li>
+<a class="menu-item" href="https://lp.fundsexplorer.com.br/funds-explorer-mentoria/"><span>Mentoria</span></a>
+</li>
+<li>
+<a class="menu-item has-second-level" data-item="cursos-online" href="javascript:;"><span>Cursos</span><img alt="Seta para a direita" class="has-second-level-icon" src="/assets/icons/seta-acesso-rapido-3a4dc9469ed73be961425e3697a12b0b4bad882014dc308677b09865d2b3912a.png"/></a>
+</li>
+<li>
+<a class="menu-item" href="https://www.fundsexplorer.com.br/artigos"><span>Artigos</span></a>
+</li>
+<li>
+<a class="menu-item has-second-level" data-item="gratuito" href="javascript:;"><span>Gratuito</span><img alt="Seta para a direita" class="has-second-level-icon" src="/assets/icons/seta-acesso-rapido-3a4dc9469ed73be961425e3697a12b0b4bad882014dc308677b09865d2b3912a.png"/></a>
+</li>
+<li>
+<a class="menu-item has-second-level hidden" data-item="profile" href="#" id="btn-my-account-mobile"><img class="profile" src="/assets/icons/profile-e1626371c4a19db72fe7eb8943096747b6d7a8076d88e08f202a98baf342d782.png"/><span></span><img alt="Seta para a direita" class="has-second-level-icon" src="/assets/icons/seta-acesso-rapido-3a4dc9469ed73be961425e3697a12b0b4bad882014dc308677b09865d2b3912a.png"/></a>
+</li>
+<li>
+<a class="menu-item hidden" href="javascript:;" id="btn-signin-mobile">Entrar</a>
+</li>
+<li>
+<a class="menu-item hidden" href="javascript:;" id="btn-signup-mobile">Cadastre-se</a>
+</li>
+</ul>
+</div>
+<div class="menu-mobile-second-level" id="menu-mobile-second-level-fiis">
+<ul>
+<li>
+<a class="menu-mobile-back" href="javascript:;">
+<img alt="Seta para a direita" class="has-second-level-icon" src="/assets/icons/seta-acesso-rapido-3a4dc9469ed73be961425e3697a12b0b4bad882014dc308677b09865d2b3912a.png"/>
+              voltar
+            </a>
+</li>
+<li>
+<a href="/funds">Lista de FIIs</a>
+</li>
+<li>
+<a href="/ranking">Ranking de FIIs</a>
+</li>
+<li>
+<a href="/rendimentos-e-amortizacoes">Rendimentos</a>
+</li>
+<li>
+<a href="/comunicados">Comunicados</a>
+</li>
+</ul>
+</div>
+<div class="menu-mobile-second-level" id="menu-mobile-second-level-cursos-online">
+<a class="menu-mobile-back" href="javascript:;">
+<img alt="Seta para a direita" class="has-second-level-icon" src="/assets/icons/seta-acesso-rapido-3a4dc9469ed73be961425e3697a12b0b4bad882014dc308677b09865d2b3912a.png"/>
+          voltar
+        </a>
+<span id="title">Cursos Online</span>
+<ul>
+<li>
+<a href="https://lp.fundsexplorer.com.br/curso-fundsexplorer-learning/" target="_blank"><span>Funds Explorer Learning</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/combo-funds-pocket/" target="_blank"><span>Funds Pocket CRIs</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/combo-funds-pocket/" target="_blank"><span>Funds Pocket Shoppings</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/combo-funds-pocket/" target="_blank"><span>Funds Pocket Escritórios</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/combo-funds-pocket/" target="_blank"><span>Funds Pocket Galpões</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/combo-funds-pocket/" target="_blank"><span>Funds Pocket Desenvolvimento e FoF</span></a>
+</li>
+</ul>
+</div>
+<div class="menu-mobile-second-level" id="menu-mobile-second-level-gratuito">
+<a class="menu-mobile-back" href="javascript:;">
+<img alt="Seta para a direita" class="has-second-level-icon" src="/assets/icons/seta-acesso-rapido-3a4dc9469ed73be961425e3697a12b0b4bad882014dc308677b09865d2b3912a.png"/>
+          voltar
+        </a>
+<span id="title">Gratuito</span>
+<ul>
+<li>
+<a href="https://lp.fundsexplorer.com.br/ebook-gratuito-fiis/" target="_blank"><span>Ebook grátis</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/lista-vip/" target="_blank"><span>Lista VIP</span></a>
+</li>
+<li>
+<a href="https://t.me/jfiis" target="_blank"><span>Telegram</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/ebook-gratuito-fiis/" target="_blank"><span>Calculadora de Lucro</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/fiicast/" target="_blank"><span>FIICAST - Um podcast Funds Explorer</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/relatorio-principais-tipos-de-fiis/" target="_blank"><span>Tipos de FIIs</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/minicurso-investindo-em-fundos-imobiliarios/" target="_blank"><span>MINICURSO GRATUITO</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/planilha-snapshot-fiis/" target="_blank"><span>Planilha SnapshotFII</span></a>
+</li>
+</ul>
+</div>
+<div class="menu-mobile-second-level" id="menu-mobile-second-level-assinatura">
+<a class="menu-mobile-back" href="javascript:;">
+<img alt="Seta para a direita" class="has-second-level-icon" src="/assets/icons/seta-acesso-rapido-3a4dc9469ed73be961425e3697a12b0b4bad882014dc308677b09865d2b3912a.png"/>
+          voltar
+        </a>
+<span id="title">Assinatura</span>
+<ul>
+<li>
+<a href="https://lp.fundsexplorer.com.br/carteira-de-investimento-em-fiis/" target="_blank"><span>Assinatura Funds Explorer</span></a>
+</li>
+<li>
+<a href="https://lp.fundsexplorer.com.br/funds-data/" target="_blank"><span>Funds Data Buildings</span></a>
+</li>
+</ul>
+</div>
+<div class="menu-mobile-second-level" id="menu-mobile-second-level-ferramentas">
+<a class="menu-mobile-back" href="javascript:;">
+<img alt="Seta para a direita" class="has-second-level-icon" src="/assets/icons/seta-acesso-rapido-3a4dc9469ed73be961425e3697a12b0b4bad882014dc308677b09865d2b3912a.png"/>
+          voltar
+        </a>
+<span id="title">Ferramentas</span>
+<ul>
+<li>
+<a href="/funds"><img alt="Lista Fiis" class="img-menu-item" src="/assets/icons/home/lista-fiis-new-254040adc3dfaeea8f29b6be6b252d227f008c7b8ab17e37d45c8aa37fe7b906.png"/><span>Lista de FIIs</span></a>
+</li>
+<li>
+<a href="/ranking"><img alt="Ranking Fiis" class="img-menu-item" src="/assets/icons/home/ranking-fiis-3f41ad795a57e41fa44fa51e029119701679c7ee3b4a4b9d7a7f6b39ba8f131a.png"/><span>Ranking de FIIs</span></a>
+</li>
+<li>
+<a href="/emissoes-ipos"><img alt="Emissões e IPOs" class="img-menu-item" src="/assets/icons/home/rendimentos-02a11c877654f38f53a85f3deb5300be5a5b1a153c5876390ca970db6d7eeaf4.png"/><span>Emissões e IPOs</span></a>
+</li>
+<li>
+<a href="/rendimentos-e-amortizacoes"><img alt="Rendimentos" class="img-menu-item" src="/assets/icons/home/rendimentos-02a11c877654f38f53a85f3deb5300be5a5b1a153c5876390ca970db6d7eeaf4.png"/><span>Rendimentos</span></a>
+</li>
+<li>
+<a href="/mapa-fiis"><img alt="Mapa de Fiis" class="img-menu-item" src="/assets/icons/home/mapa-fiis-1633afa2546c1a4909ae1fffea43f36f0a96e58952a5045aaac16f9ef4355714.png"/><span>Mapa de Fiis</span></a>
+</li>
+<li>
+<a href="/estudos"><img alt="Estudos" class="img-menu-item" src="/assets/icons/home/estudos-new-93a29b1a9121dc8bb9cdabbca332b93a13ae435ecc028b8ffb784f45cf736939.png"/><span>Estudos</span></a>
+</li>
+<li>
+<a href="/carteiras"><img alt="Carteiras" class="img-menu-item" src="/assets/icons/home/carteiras-new-cc0498ee6e992c403ffde489ee9d97d0a2dab917195a300daf0a3de636a88c63.png"/><span>Carteiras</span></a>
+</li>
+<li>
+<a href="/simulador"><img alt="Simulador" class="img-menu-item" src="/assets/icons/home/simulador-new-120a4209228d82bb555880d9fd0d2bc6b42a0000a1fff22f5b4ee9a9afa99a6e.png"/><span>Simulador</span></a>
+</li>
+<li>
+<a href="/placar-fiis"><img alt="Placar de Fiis" class="img-menu-item" src="/assets/icons/home/placar-new-93e02f6fa854642cbcedcc86f1ff7df7407fc781f9b54a54cd62845c9fab21da.png"/><span>Placar de Fiis</span></a>
+</li>
+<li>
+<a href="/comunicados"><img alt="Comunicados" class="img-menu-item" src="/assets/icons/home/lista-fiis-new-254040adc3dfaeea8f29b6be6b252d227f008c7b8ab17e37d45c8aa37fe7b906.png"/><span>Comunicados</span></a>
+</li>
+</ul>
+</div>
+<div class="menu-mobile-second-level" id="menu-mobile-second-level-profile">
+<a class="menu-mobile-back" href="javascript:;">
+<img alt="Seta para a direita" class="has-second-level-icon" src="/assets/icons/seta-acesso-rapido-3a4dc9469ed73be961425e3697a12b0b4bad882014dc308677b09865d2b3912a.png"/>
+          voltar
+        </a>
+<span id="title">Perfil</span>
+<ul>
+<li>
+<a class="hidden subscriber" href="/area-assinante"><span>Área do Assinante</span></a>
+</li>
+<li>
+<a href="/meus-dados"><span>Meus Dados</span></a>
+</li>
+<li>
+<a href="/contato"><span>Contato</span></a>
+</li>
+<li>
+<a href="/users/sign_out"><span>Sair</span></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="search-menu">
+<div class="container">
+<div class="row">
+<div class="col-md-7 col-xs-12 justify-content-center">
+<div class="form-group">
+<select class="form-control fe-input" id="search-menu-select" multiple="multiple" name="search-menu-select"><option value="ABCP11"><a href="/funds/ABCP11">ABCP11 - FDO INV IMOB GRAND PLAZA SHOPPING</a></option>
+<option value="AFCR11"><a href="/funds/AFCR11">AFCR11 - AF INVEST FDO INV. IMOB. - RECEBÍVEIS IMOB.</a></option>
+<option value="AFHI11"><a href="/funds/AFHI11">AFHI11 - AF INVEST CRI FDO. INV. IMOB – RECEBÍVEIS IMOB.</a></option>
+<option value="AFOF11"><a href="/funds/AFOF11">AFOF11 - ALIANZA FOFII FDO. INVEST. IMOB.</a></option>
+<option value="AIEC11"><a href="/funds/AIEC11">AIEC11 - AUTONOMY EDIFÍCIOS CORPORATIVOS FUND. INV. IMOB.</a></option>
+<option value="ALMI11"><a href="/funds/ALMI11">ALMI11 - FDO INV IMOB - FII TORRE ALMIRANTE</a></option>
+<option value="ALZR11"><a href="/funds/ALZR11">ALZR11 - ALIANZA TRUST RENDA IMOBILIARIA FDO INV IMOB</a></option>
+<option value="ANCR11B"><a href="/funds/ANCR11B">ANCR11B - FDO INV IMOB - FII ANCAR IC</a></option>
+<option value="AQLL11"><a href="/funds/AQLL11">AQLL11 - ÁQUILLA FDO INV IMOB - FII</a></option>
+<option value="ARCT11"><a href="/funds/ARCT11">ARCT11 - RIZA ARCTIUM REAL ESTATE FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="ARFI11B"><a href="/funds/ARFI11B">ARFI11B - ÁQUILLA RENDA FDO INV IMOB - FII</a></option>
+<option value="ARRI11"><a href="/funds/ARRI11">ARRI11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO ÁTRIO REIT RECEBÍVEIS IMOBILIÁRIOS</a></option>
+<option value="ATCR11"><a href="/funds/ATCR11">ATCR11 - ÁTICO RENDA FDO INV IMOB - FII</a></option>
+<option value="ATSA11"><a href="/funds/ATSA11">ATSA11 - HEDGE ATRIUM SHOPPING SANTO ANDRE FDO INV IMOB</a></option>
+<option value="ATWN11"><a href="/funds/ATWN11">ATWN11 - FDO. INV. IMOB. A–TOWN</a></option>
+<option value="BARI11"><a href="/funds/BARI11">BARI11 - FDO INV IMOB BARIGUI RENDIMENTOS IMOB I FII</a></option>
+<option value="BBFI11B"><a href="/funds/BBFI11B">BBFI11B - BB FDO INV IMOB PROGRESSIVO</a></option>
+<option value="BBFO11"><a href="/funds/BBFO11">BBFO11 - BB FUNDO DE FUNDOS - FDO. INV. IMOB.</a></option>
+<option value="BBIM11"><a href="/funds/BBIM11">BBIM11 - BB RECEBIVEIS IMOBILIARIOS FDO INV IMOB - FII</a></option>
+<option value="BBPO11"><a href="/funds/BBPO11">BBPO11 - BB PROGRESSIVO II FDO INV IMOB - FII</a></option>
+<option value="BBRC11"><a href="/funds/BBRC11">BBRC11 - BB RENDA CORPORATIVA FDO INV IMOB - FII</a></option>
+<option value="BBVJ11"><a href="/funds/BBVJ11">BBVJ11 - FDO INV IMOB BB VOTORANTIM JHSF C JARD CONT TOWER</a></option>
+<option value="BCFF11"><a href="/funds/BCFF11">BCFF11 - FDO INV IMOB - FII BTG PACTUAL FUNDO DE FUNDOS</a></option>
+<option value="BCIA11"><a href="/funds/BCIA11">BCIA11 - BRADESCO CARTEIRA IMOBILIÁRIA ATIVA - FII</a></option>
+<option value="BCRI11"><a href="/funds/BCRI11">BCRI11 - BANESTES RECEBÍVEIS IMOBILIÁRIOS FDO INV IMOB  FII</a></option>
+<option value="BICR11"><a href="/funds/BICR11">BICR11 - INTER TÍTULOS IMOB. FDO INV. IMOB.</a></option>
+<option value="BIME11"><a href="/funds/BIME11">BIME11 - BRIO MULTIESTRATÉGIA FUNDO DE INVESTIMENTO IMOB.</a></option>
+<option value="BLCP11"><a href="/funds/BLCP11">BLCP11 - BLUECAP RENDA LOGÍSTICA FUNDO DE INVESTIMENTO IMOBILIÁRIO -FII</a></option>
+<option value="BLMC11"><a href="/funds/BLMC11">BLMC11 - BLUEMACAW CRÉDITO IMOBILIÁRIO - FDO. INV. IMOB.</a></option>
+<option value="BLMG11"><a href="/funds/BLMG11">BLMG11 - BLUEMACAW LOGÍSTICA FDO. INVEST. IMOB.</a></option>
+<option value="BLMO11"><a href="/funds/BLMO11">BLMO11 - BLUEMACAW OFFICE FUND II - FDO. INVEST. IMOB.</a></option>
+<option value="BLMR11"><a href="/funds/BLMR11">BLMR11 - BLUEMACAW RENDA + FOF FDO. INVEST. IMOB.</a></option>
+<option value="BMII11"><a href="/funds/BMII11">BMII11 - FUNDO BRASÍLIO MACHADO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="BMLC11"><a href="/funds/BMLC11">BMLC11 - FDO INV IMOB BM BRASCAN LAJES CORPORATIVAS - FII</a></option>
+<option value="BMLC11B"><a href="/funds/BMLC11B">BMLC11B - FDO INV IMOB BM BRASCAN LAJES CORPORATIVAS - FII</a></option>
+<option value="BNFS11"><a href="/funds/BNFS11">BNFS11 - BANRISUL NOVAS FRONTEIRAS FDO INV IMOB - FII</a></option>
+<option value="BPFF11"><a href="/funds/BPFF11">BPFF11 - FDO INV IMOB BRASIL PLURAL ABSOLUTO FDO DE FUNDOS</a></option>
+<option value="BPML11"><a href="/funds/BPML11">BPML11 - FDO INV IMOB BTG PACTUAL SHOPPINGS</a></option>
+<option value="BRCO11"><a href="/funds/BRCO11">BRCO11 - BRESCO LOGÍSTICA - FDO INV IMOB</a></option>
+<option value="BRCR11"><a href="/funds/BRCR11">BRCR11 - FDO INV IMOB - FII BTG PACTUAL CORP. OFFICE FUND</a></option>
+<option value="BREV11"><a href="/funds/BREV11">BREV11 - BRAZIL REAL ESTATE VICTORY FUND I - FDO. INV. IMOB</a></option>
+<option value="BRHT11B"><a href="/funds/BRHT11B">BRHT11B - FDO INV IMOB BR HOTEIS - FII</a></option>
+<option value="BRIP11"><a href="/funds/BRIP11">BRIP11 - BRIO REAL ESTATE III FDO DE INVEST. IMOB.</a></option>
+<option value="BRLA11"><a href="/funds/BRLA11">BRLA11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO BRL PROP II</a></option>
+<option value="BROL11"><a href="/funds/BROL11">BROL11 - BR PROPERTIES FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="BTAL11"><a href="/funds/BTAL11">BTAL11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO BTG PACTUAL AGRO LOGÍSTICA</a></option>
+<option value="BTCR11"><a href="/funds/BTCR11">BTCR11 - FDO INV IMOB BTG PACTUAL CREDITO IMOBILIARIO</a></option>
+<option value="BTGM11"><a href="/funds/BTGM11">BTGM11 - FDO INV IMOB - FII BTG PACTUAL MALLS</a></option>
+<option value="BTLG11"><a href="/funds/BTLG11">BTLG11 - BTG PACTUAL LOGISTICA FDO INV IMOB - FII</a></option>
+<option value="BTRA11"><a href="/funds/BTRA11">BTRA11 - FDO INV IMOB BTG PACTUAL TERRAS AGRÍCOLAS</a></option>
+<option value="BTSG11"><a href="/funds/BTSG11">BTSG11 - BTSP I FDO. INVEST. IMOB - FII</a></option>
+<option value="BTWR11"><a href="/funds/BTWR11">BTWR11 - BTOWERS FII - FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="BVAR11"><a href="/funds/BVAR11">BVAR11 - FDO INV IMOB BRASIL VAREJO - FII</a></option>
+<option value="BZLI11"><a href="/funds/BZLI11">BZLI11 - BRAZIL REALTY FDO INV IMOB</a></option>
+<option value="CARE11"><a href="/funds/CARE11">CARE11 - BRAZILIAN GRAVEYARD DEATH CARE FDO INV IMOB - FII</a></option>
+<option value="CBOP11"><a href="/funds/CBOP11">CBOP11 - CASTELLO BRANCO OFFICE PARK FDO INV IMOB - FII</a></option>
+<option value="CCRF11"><a href="/funds/CCRF11">CCRF11 - CANVAS CRI - FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="CEOC11"><a href="/funds/CEOC11">CEOC11 - FDO INV IMOB - FII CEO CYRELA COMMERC. PROPERTIES</a></option>
+<option value="CJCT11"><a href="/funds/CJCT11">CJCT11 - CIDADE JARDIM CONTINENTAL TOWER FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="CNES11"><a href="/funds/CNES11">CNES11 - FDO INV IMOB - FII CENESP</a></option>
+<option value="CORM11"><a href="/funds/CORM11">CORM11 - CORE METROPOLIS FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="CPFF11"><a href="/funds/CPFF11">CPFF11 - CAPITÂNIA REIT FOF - FDO. INVEST. IMOB</a></option>
+<option value="CPTS11"><a href="/funds/CPTS11">CPTS11 - CAPITANIA SECURITIES II FDO INV IMOB - FII</a></option>
+<option value="CRFF11"><a href="/funds/CRFF11">CRFF11 - CAIXA RIO BRAVO FDO DE FDOS INV IMOB II</a></option>
+<option value="CTXT11"><a href="/funds/CTXT11">CTXT11 - FDO INV IMOB CENTRO TEXTIL INTERNACIONAL</a></option>
+<option value="CVBI11"><a href="/funds/CVBI11">CVBI11 - FDO INV. IMOB. VBI CRI</a></option>
+<option value="CXCE11B"><a href="/funds/CXCE11B">CXCE11B - FUNDO DE INVESTIMENTO IMOBILIARIO CAIXA CEDAE</a></option>
+<option value="CXCO11"><a href="/funds/CXCO11">CXCO11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO CAIXA IMÓVEIS CORPORATIVOS</a></option>
+<option value="CXRI11"><a href="/funds/CXRI11">CXRI11 - CAIXA RIO BRAVO FUNDO DE FDO INV IMOB - FII</a></option>
+<option value="CXTL11"><a href="/funds/CXTL11">CXTL11 - FDO INV IMOB CAIXA TRX LOGÍSTICA RENDA</a></option>
+<option value="DEVA11"><a href="/funds/DEVA11">DEVA11 - DEVANT RECEBÍVEIS IMOBILIÁRIOS FDO. INVEST. IMOB.</a></option>
+<option value="DMAC11"><a href="/funds/DMAC11">DMAC11 - MAC FDO INV IMOB</a></option>
+<option value="DOMC11"><a href="/funds/DOMC11">DOMC11 - REAG RENDA IMOBILIARIA FDO INV IMOB - FII</a></option>
+<option value="DOVL11B"><a href="/funds/DOVL11B">DOVL11B - DOVEL FDO INV IMOB</a></option>
+<option value="DRIT11B"><a href="/funds/DRIT11B">DRIT11B - MULTIGESTÃO RENDA COMERCIAL FDO INV IMOB - FII</a></option>
+<option value="EDFO11B"><a href="/funds/EDFO11B">EDFO11B - FDO INV IMOB EDIFÍCIO OURINVEST</a></option>
+<option value="EDGA11"><a href="/funds/EDGA11">EDGA11 - FDO INV IMOB - FII EDIFÍCIO GALERIA</a></option>
+<option value="EGYR11"><a href="/funds/EGYR11">EGYR11 - ENERGY RESORT FDO. INVEST. IMOB.</a></option>
+<option value="ELDO11B"><a href="/funds/ELDO11B">ELDO11B - FDO INV IMOB - FII ELDORADO</a></option>
+<option value="EQIN11"><a href="/funds/EQIN11">EQIN11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO - FII NCH BRASIL RECEBÍVEIS IMOBILIÁRIOS</a></option>
+<option value="EQIR11"><a href="/funds/EQIR11">EQIR11 - EQI RECEBÍVEIS IMOBILIÁRIOS FUNDO DE INVESTIMENTO FII</a></option>
+<option value="ERCR11"><a href="/funds/ERCR11">ERCR11 - ESTOQUE RESIDENCIAL E COMERCIAL RJ FDO INV IMOB</a></option>
+<option value="ERPA11"><a href="/funds/ERPA11">ERPA11 - EUROPA 105 - FDO INV IMOB</a></option>
+<option value="EURO11"><a href="/funds/EURO11">EURO11 - FDO INV IMOB EUROPAR</a></option>
+<option value="EVBI11"><a href="/funds/EVBI11">EVBI11 - VBI CONSUMO ESSEN FDO. INVEST. IMOB.</a></option>
+<option value="FAED11"><a href="/funds/FAED11">FAED11 - FDO INV IMOB - FII ANHANGUERA EDUCACIONAL</a></option>
+<option value="FAMB11B"><a href="/funds/FAMB11B">FAMB11B - FDO INV IMOB - FII EDIFÍCIO ALMIRANTE BARROSO</a></option>
+<option value="FATN11"><a href="/funds/FATN11">FATN11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO ATHENA I</a></option>
+<option value="FCAS11"><a href="/funds/FCAS11">FCAS11 - FDO INV IMOB - FII EDIFÍCIO CASTELO</a></option>
+<option value="FCFL11"><a href="/funds/FCFL11">FCFL11 - FDO INV IMOB - FII CAMPUS FARIA LIMA</a></option>
+<option value="FEXC11"><a href="/funds/FEXC11">FEXC11 - FDO INV IMOB - FII BTG PACTUAL FUNDO DE CRI</a></option>
+<option value="FFCI11"><a href="/funds/FFCI11">FFCI11 - FDO INV IMOB RIO BRAVO RENDA CORPORATIVA</a></option>
+<option value="FIGS11"><a href="/funds/FIGS11">FIGS11 - FDO INV IMOB GENERAL SHOPPING ATIVO E RENDA - FII</a></option>
+<option value="FIIB11"><a href="/funds/FIIB11">FIIB11 - FDO INV IMOB INDUSTRIAL DO BRASIL</a></option>
+<option value="FIIP11B"><a href="/funds/FIIP11B">FIIP11B - RB CAPITAL RENDA I FDO INV IMOB - FII</a></option>
+<option value="FINF11"><a href="/funds/FINF11">FINF11 - FDO INV IMOB INFRA REAL ESTATE - FII</a></option>
+<option value="FISC11"><a href="/funds/FISC11">FISC11 - FDO INV IMOB SC 401</a></option>
+<option value="FIVN11"><a href="/funds/FIVN11">FIVN11 - FDO INV IMOB VIDA NOVA - FII</a></option>
+<option value="FLCR11"><a href="/funds/FLCR11">FLCR11 - FARIA LIMA CAPITAL RECEBÍVEIS IMOBILIÁRIOS I - FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="FLMA11"><a href="/funds/FLMA11">FLMA11 - FII CONTINENTAL SQUARE FARIA LIMA</a></option>
+<option value="FLRP11"><a href="/funds/FLRP11">FLRP11 - FDO INV IMOB - FII FLORIPA SHOPPING</a></option>
+<option value="FMOF11"><a href="/funds/FMOF11">FMOF11 - FDO INV IMOB MEMORIAL OFFICE</a></option>
+<option value="FOFT11"><a href="/funds/FOFT11">FOFT11 - CSHG TOP FOFII 2 FDO INV IMOB - FII</a></option>
+<option value="FPAB11"><a href="/funds/FPAB11">FPAB11 - FDO INV IMOB PROJETO ÁGUA BRANCA</a></option>
+<option value="FPNG11"><a href="/funds/FPNG11">FPNG11 - FDO INV IMOB PEDRA NEGRA RENDA IMOB</a></option>
+<option value="FVBI11"><a href="/funds/FVBI11">FVBI11 - FDO INV IMOB VBI FL 4440 - FII</a></option>
+<option value="FVPQ11"><a href="/funds/FVPQ11">FVPQ11 - FDO INV IMOB VIA PARQUE SHOPPING - FII</a></option>
+<option value="GALG11"><a href="/funds/GALG11">GALG11 - GUARDIAN LOGISTICA FDO. INVEST. IMOB.</a></option>
+<option value="GCFF11"><a href="/funds/GCFF11">GCFF11 - GALAPAGOS FUNDO DE FUNDOS - FII FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="GCRI11"><a href="/funds/GCRI11">GCRI11 - GALAPAGOS RECEBÍVEIS IMOBILIÁRIOS - FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="GESE11B"><a href="/funds/GESE11B">GESE11B - FUNDO DE INVESTIMENTO IMOBILIARIO GENERAL SEVERIANO</a></option>
+<option value="GGRC11"><a href="/funds/GGRC11">GGRC11 - GGR COVEPI RENDA FDO INV IMOB</a></option>
+<option value="GLPL11"><a href="/funds/GLPL11">GLPL11 - GLP LOGÍSTICA FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="GRLV11"><a href="/funds/GRLV11">GRLV11 - CSHG GR LOUVEIRA FDO DE INV IMOB - FII</a></option>
+<option value="GSFI11"><a href="/funds/GSFI11">GSFI11 - GENERAL SHOP E OUTLETS DO BRASIL FDO INV IMOB - FI</a></option>
+<option value="GTLG11"><a href="/funds/GTLG11">GTLG11 - GTIS BRAZIL LOGISTICS FDO. INV. IMOB.</a></option>
+<option value="GTWR11"><a href="/funds/GTWR11">GTWR11 - FDO INV IMOB GREEN TOWERS</a></option>
+<option value="HAAA11"><a href="/funds/HAAA11">HAAA11 - HEDGE AAA FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="HABT11"><a href="/funds/HABT11">HABT11 - HABITAT II - FDO INT IMOB</a></option>
+<option value="HBRH11"><a href="/funds/HBRH11">HBRH11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO MULTI RENDA URBANA</a></option>
+<option value="HBTT11"><a href="/funds/HBTT11">HBTT11 - FDO INV IMOB HABITAT I</a></option>
+<option value="HCHG11"><a href="/funds/HCHG11">HCHG11 - HECTARE RECEBÍVEIS HIGH GRADE FDO. INV. IMOB.</a></option>
+<option value="HCRI11"><a href="/funds/HCRI11">HCRI11 - FDO INV IMOB - FII HOSPITAL DA CRIANÇA</a></option>
+<option value="HCST11"><a href="/funds/HCST11">HCST11 - HECTARE DESENV. STUDENT HOUSING – FDO. INV. IMOB.</a></option>
+<option value="HCTR11"><a href="/funds/HCTR11">HCTR11 - HECTARE CE - FDO INV IMOB</a></option>
+<option value="HFOF11"><a href="/funds/HFOF11">HFOF11 - HEDGE TOP FOFII 3 FDO INV IMOB</a></option>
+<option value="HGBS11"><a href="/funds/HGBS11">HGBS11 - HEDGE BRASIL SHOPPING FDO INV IMOB</a></option>
+<option value="HGCR11"><a href="/funds/HGCR11">HGCR11 - CSHG RECEBÍVEIS IMOBILIÁRIOS FDO INV IMOB - FII</a></option>
+<option value="HGFF11"><a href="/funds/HGFF11">HGFF11 - CSHG IMOB. FOF - FDO INV. IMOB. - FII</a></option>
+<option value="HGIC11"><a href="/funds/HGIC11">HGIC11 - HGI CRÉDITOS IMOBILIÁRIOS FDO. INV. IMOB.</a></option>
+<option value="HGLG11"><a href="/funds/HGLG11">HGLG11 - CSHG LOGÍSTICA FDO INV IMOB - FII</a></option>
+<option value="HGPO11"><a href="/funds/HGPO11">HGPO11 - CSHG PRIME OFFICES FDO INV IMOB - FII</a></option>
+<option value="HGRE11"><a href="/funds/HGRE11">HGRE11 - CSHG REAL ESTATE FDO INV IMOB - FII</a></option>
+<option value="HGRU11"><a href="/funds/HGRU11">HGRU11 - CSHG RENDA URBANA - FDO INV IMOB - FII</a></option>
+<option value="HLOG11"><a href="/funds/HLOG11">HLOG11 - HEDGE LOGÍSTICA FDO. INV. IMOB.</a></option>
+<option value="HMOC11"><a href="/funds/HMOC11">HMOC11 - HEDGE SHOPPING PRAÇA DA MOÇA FDO INV IMOB</a></option>
+<option value="HOSI11"><a href="/funds/HOSI11">HOSI11 - FDO. INV. IMOB. HOUSI</a></option>
+<option value="HPDP11"><a href="/funds/HPDP11">HPDP11 - HEDGE SHOPPING PARQUE DOM PEDRO FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="HRDF11"><a href="/funds/HRDF11">HRDF11 - HEDGE REALTY DEVELOPMENT FDO INV IMOB</a></option>
+<option value="HREC11"><a href="/funds/HREC11">HREC11 - HEDGE RECEBÍVEIS FDO. INVEST. IMOB.</a></option>
+<option value="HSAF11"><a href="/funds/HSAF11">HSAF11 - HSI ATIVOS FINANCEIROS - FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="HSLG11"><a href="/funds/HSLG11">HSLG11 - HSI LOGÍSTICA FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="HSML11"><a href="/funds/HSML11">HSML11 - HSI MALLS FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="HSRE11"><a href="/funds/HSRE11">HSRE11 - HSI RENDA IMOB FDO INV IMOB</a></option>
+<option value="HTMX11"><a href="/funds/HTMX11">HTMX11 - FDO INV IMOB - FII HOTEL MAXINVEST</a></option>
+<option value="HUSC11"><a href="/funds/HUSC11">HUSC11 - FDO INV IMOB HOSPITAL UNIMED SUL CAPIXABA</a></option>
+<option value="HUSI11"><a href="/funds/HUSI11">HUSI11 - HUSI FDO INV. IMOB.</a></option>
+<option value="IBCR11"><a href="/funds/IBCR11">IBCR11 - FDO DE INV IMOBILIÁRIO DE CRI INTEGRAL BREI</a></option>
+<option value="IBFF11"><a href="/funds/IBFF11">IBFF11 - FDO INV. IMOB. FOF INTEGRAL BREI</a></option>
+<option value="IDFI11"><a href="/funds/IDFI11">IDFI11 - FDO INV IMOBILIÁRIO DE UNIDADES AUTÔNOMAS</a></option>
+<option value="IFID11"><a href="/funds/IFID11">IFID11 - IFI-D FUNDO DE INVESTIMENTO IMOBILIARIO - FII</a></option>
+<option value="IFIE11"><a href="/funds/IFIE11">IFIE11 - IFI-E FUNDO DE INVESTIMENTO IMOBILIARIO - FII</a></option>
+<option value="IRDM11"><a href="/funds/IRDM11">IRDM11 - FII IRIDIUM RECEBÍVEIS IMOBILIÁRIOS</a></option>
+<option value="IRIM11"><a href="/funds/IRIM11">IRIM11 - IRIDIUM FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="JFLL11"><a href="/funds/JFLL11">JFLL11 - JFL LIVING FDO. INV. IMOB.</a></option>
+<option value="JPPA11"><a href="/funds/JPPA11">JPPA11 - JPP ALLOCATON MOGNO FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="JRDM11"><a href="/funds/JRDM11">JRDM11 - FII SHOPPING JARDIM SUL</a></option>
+<option value="JSAF11"><a href="/funds/JSAF11">JSAF11 - JS ATIVOS FINANCEIROS FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="JSRE11"><a href="/funds/JSRE11">JSRE11 - JS REAL ESTATE MULTIGESTÃO - FII</a></option>
+<option value="KEVE11"><a href="/funds/KEVE11">KEVE11 - EVEN II KINEA FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="KFOF11"><a href="/funds/KFOF11">KFOF11 - FUNDO DE FDO INV IMOB KINEA FII</a></option>
+<option value="KINP11"><a href="/funds/KINP11">KINP11 - EVEN PERMUTA KINEA FII - FDO INV IMOB</a></option>
+<option value="KISU11"><a href="/funds/KISU11">KISU11 - KILIMA FIC FDO. IMOB. SUNO 30</a></option>
+<option value="KNCR11"><a href="/funds/KNCR11">KNCR11 - KINEA RENDIMENTOS IMOBILIÁRIOS FDO INV IMOB - FII</a></option>
+<option value="KNHY11"><a href="/funds/KNHY11">KNHY11 - KINEA HIGH YIELD CRI FDO INV IMOB - FII</a></option>
+<option value="KNIP11"><a href="/funds/KNIP11">KNIP11 - KINEA ÍNDICES DE PREÇOS FDO INV IMOB - FII</a></option>
+<option value="KNRE11"><a href="/funds/KNRE11">KNRE11 - KINEA II REAL ESTATE EQUITY FDO INV IMOB</a></option>
+<option value="KNRI11"><a href="/funds/KNRI11">KNRI11 - KINEA RENDA IMOBILIÁRIA FDO INV IMOB - FII</a></option>
+<option value="KNSC11"><a href="/funds/KNSC11">KNSC11 - KINEA SECURITIES FDO. DE INV. IMOB. - FII</a></option>
+<option value="LASC11"><a href="/funds/LASC11">LASC11 - LEGATUS SHOPPINGS FDO. INV. IMOB. - FII</a></option>
+<option value="LFTT11"><a href="/funds/LFTT11">LFTT11 - LOFT II FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="LGCP11"><a href="/funds/LGCP11">LGCP11 - LOGCP INTER FDO INV IMOB</a></option>
+<option value="LUGG11"><a href="/funds/LUGG11">LUGG11 - LUGGO FDO. INV. IMOB.</a></option>
+<option value="LVBI11"><a href="/funds/LVBI11">LVBI11 - FDO INV IMOB - VBI LOGÍSTICO</a></option>
+<option value="MALL11"><a href="/funds/MALL11">MALL11 - MALLS BRASIL PLURAL FDO INV IMOB</a></option>
+<option value="MAXR11"><a href="/funds/MAXR11">MAXR11 - FDO INV IMOB - FII MAX RETAIL</a></option>
+<option value="MBRF11"><a href="/funds/MBRF11">MBRF11 - FDO INV IMOB MERCANTIL DO BRASIL - FII</a></option>
+<option value="MCCI11"><a href="/funds/MCCI11">MCCI11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO MAUÁ CAPITAL RECEBÍVEIS IMOBILIÁRIOS - FII</a></option>
+<option value="MCFF11"><a href="/funds/MCFF11">MCFF11 - MAUÁ CAPITAL FOF – FDO. INVEST. IMOB.</a></option>
+<option value="MCHF11"><a href="/funds/MCHF11">MCHF11 - MAUÁ CAPITAL HEDGE FUND FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="MCHY11"><a href="/funds/MCHY11">MCHY11 - FDO DE INV IMOB MAUÁ CAPITAL HIGH YIELD - FII</a></option>
+<option value="MFAI11"><a href="/funds/MFAI11">MFAI11 - MERITO FDO. AÇÕES IMOB. FII - FDO INV. IMOB.</a></option>
+<option value="MFII11"><a href="/funds/MFII11">MFII11 - MÉRITO DESENVOLVIMENTO IMOBILIÁRIO I - FII</a></option>
+<option value="MFVI11"><a href="/funds/MFVI11">MFVI11 - FDO INV IMOB MV9 - FII</a></option>
+<option value="MGCR11"><a href="/funds/MGCR11">MGCR11 - FDO. INVEST. IMOB. MOGNO CRI HIGH GRADE</a></option>
+<option value="MGFF11"><a href="/funds/MGFF11">MGFF11 - FUNDO DE INVESTIMENTO IMOBILIARIO MOGNO FUNDO DE FUNDOS</a></option>
+<option value="MGHT11"><a href="/funds/MGHT11">MGHT11 - FDO. INV. IMOB. MOGNO HOTEIS</a></option>
+<option value="MGLG11"><a href="/funds/MGLG11">MGLG11 - MOGNO LOGÍSTICA FUNDO DE INVEST. IMOBILIARIO - FII</a></option>
+<option value="MINT11"><a href="/funds/MINT11">MINT11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO MINT EDUCACIONAL</a></option>
+<option value="MORC11"><a href="/funds/MORC11">MORC11 - MORE RECEBÍVEIS IMOBILIÁRIOS FII FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="MORE11"><a href="/funds/MORE11">MORE11 - MORE REAL ESTATE FOF FII FDO. INV. IMOB.</a></option>
+<option value="MTOF11"><a href="/funds/MTOF11">MTOF11 - MULTIOFFICES 1 – FDO. INV. IMOB</a></option>
+<option value="MXRF11"><a href="/funds/MXRF11">MXRF11 - MAXI RENDA FDO INV IMOB - FII</a></option>
+<option value="NAVT11"><a href="/funds/NAVT11">NAVT11 - NAVI IMOBILIÁRIO TOTAL RETURN FDO. INVEST. IMOB.</a></option>
+<option value="NCHB11"><a href="/funds/NCHB11">NCHB11 - FDO INV IMOB - FII NCH BRASIL RECEBÍVEIS IMOB</a></option>
+<option value="NEWL11"><a href="/funds/NEWL11">NEWL11 - NEWPORT LOGÍSTICA FDO INV. IMOB.</a></option>
+<option value="NEWU11"><a href="/funds/NEWU11">NEWU11 - NEWPORT RENDA URBANA FDO INV IMOB</a></option>
+<option value="NSLU11"><a href="/funds/NSLU11">NSLU11 - FDO INV IMOB - FII HOSPITAL NOSSA SRA DE LOURDES</a></option>
+<option value="NVHO11"><a href="/funds/NVHO11">NVHO11 - FDO INV IMOB - FII NOVO HORIZONTE</a></option>
+<option value="NVIF11B"><a href="/funds/NVIF11B">NVIF11B - NOVA I - FDO INV IMOB - FII</a></option>
+<option value="ONEF11"><a href="/funds/ONEF11">ONEF11 - FDO INV IMOB THE ONE</a></option>
+<option value="ORPD11"><a href="/funds/ORPD11">ORPD11 - OURO PRETO DESENV IMOB I FDO INV IMOB - FII</a></option>
+<option value="OUFF11"><a href="/funds/OUFF11">OUFF11 - FDO INV IMOB - OURINVEST FUNDO DE FUNDOS</a></option>
+<option value="OUJP11"><a href="/funds/OUJP11">OUJP11 - OURINVEST JPP FDO INV IMOB - FII</a></option>
+<option value="OULG11"><a href="/funds/OULG11">OULG11 - FDO INV IMOB OURINVEST LOGÍSTICA</a></option>
+<option value="OURE11"><a href="/funds/OURE11">OURE11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO OURINVEST RENDA ESTRUTURADA</a></option>
+<option value="PABY11"><a href="/funds/PABY11">PABY11 - FDO INV IMOB PANAMBY</a></option>
+<option value="PATC11"><a href="/funds/PATC11">PATC11 - PÁTRIA EDIFÍCIOS CORPORATIVOS FDO INV IMOB - FII</a></option>
+<option value="PATL11"><a href="/funds/PATL11">PATL11 - PÁTRIA LOGÍSTICA FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="PLCR11"><a href="/funds/PLCR11">PLCR11 - FDO INV. IMOB. PLURAL RECEBIVEIS</a></option>
+<option value="PLOG11"><a href="/funds/PLOG11">PLOG11 - PLURAL LOGÍSTICA FDO. INV. IMOB.</a></option>
+<option value="PLRI11"><a href="/funds/PLRI11">PLRI11 - POLO FDO INV IMOB - FII RECEBÍVEIS IMOBILIÁRIOS I</a></option>
+<option value="PORD11"><a href="/funds/PORD11">PORD11 - POLO FDO INV IMOB - RECEBÍVEIS IMOB II - FII</a></option>
+<option value="PQAG11"><a href="/funds/PQAG11">PQAG11 - PARQUE ANHANGUERA FDO. INVEST. IMOB.</a></option>
+<option value="PQDP11"><a href="/funds/PQDP11">PQDP11 - FDO INV IMOB - FII PARQUE D. PEDRO SHOPPING CENTER</a></option>
+<option value="PRSV11"><a href="/funds/PRSV11">PRSV11 - FDO INV IMOB - FII PRESIDENTE VARGAS</a></option>
+<option value="PRTS11"><a href="/funds/PRTS11">PRTS11 - MULTI PROPERTIES FDO INV IMOB - FII</a></option>
+<option value="PVBI11"><a href="/funds/PVBI11">PVBI11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO - VBI PRIME PROPERTIES</a></option>
+<option value="QAGR11"><a href="/funds/QAGR11">QAGR11 - QUASAR AGRO - FDO INV. IMOB.</a></option>
+<option value="QAMI11"><a href="/funds/QAMI11">QAMI11 - QUASAR CRÉDITO IMOBILIÁRIO FDO. INV. IMOB.</a></option>
+<option value="QIFF11"><a href="/funds/QIFF11">QIFF11 - QUATÁ IMOB FUNDO DE FUNDOS - FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="QIRI11"><a href="/funds/QIRI11">QIRI11 - QUATÁ IMOB RECEBÍVEIS IMOBILIÁRIOS - FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="QMFF11"><a href="/funds/QMFF11">QMFF11 - QUATÁ MONETAI FUNDO DE FUNDOS - FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="RBBV11"><a href="/funds/RBBV11">RBBV11 - JHSF RIO BRAVO FAZENDA BOA VISTA CAP. PROT. - FII</a></option>
+<option value="RBCB11"><a href="/funds/RBCB11">RBCB11 - RIO BRAVO CRÉDITO IMOBILIÁRIO I FDO INV IMOB</a></option>
+<option value="RBCO11"><a href="/funds/RBCO11">RBCO11 - RB CAPITAL OFFICE INCOME FDO INV. IMOB.</a></option>
+<option value="RBDS11"><a href="/funds/RBDS11">RBDS11 - RB CAPITAL DESENV. RESID. II FDO INV IMOB - FII</a></option>
+<option value="RBED11"><a href="/funds/RBED11">RBED11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO RIO BRAVO RENDA EDUCACIONAL</a></option>
+<option value="RBFF11"><a href="/funds/RBFF11">RBFF11 - RIO BRAVO IFIX FDO INV IMOB</a></option>
+<option value="RBGS11"><a href="/funds/RBGS11">RBGS11 - RB CAPITAL GENERAL SHOP SULACAP FDO INV IMOB - FII</a></option>
+<option value="RBHG11"><a href="/funds/RBHG11">RBHG11 - RIO BRAVO CRÉDITO IMOBILIÁRIO HIGH GRADE FUNDO DE INVESTIMENTO IMOBILIÁRIO – FII</a></option>
+<option value="RBHY11"><a href="/funds/RBHY11">RBHY11 - RIO BRAVO CRÉDITO IMOB. HIGH YIELD FDO. INV. IMOB.</a></option>
+<option value="RBIR11"><a href="/funds/RBIR11">RBIR11 - RB CAPITAL DESENVOLVIMENTO RESIDENCIAL IV FUNDO DE INVESTIMENTO IMOBILIÁRIO - FII</a></option>
+<option value="RBIV11"><a href="/funds/RBIV11">RBIV11 - RIO BRAVO CRÉDITO IMOB IV FDO INV IMOB - FII</a></option>
+<option value="RBLG11"><a href="/funds/RBLG11">RBLG11 - RB CAPITAL LOGÍSTICO FUNDO DE INVESTIMENTO IMOBILIÁRIO - FII</a></option>
+<option value="RBRD11"><a href="/funds/RBRD11">RBRD11 - RB CAPITAL RENDA II FDO INV IMOB - FII</a></option>
+<option value="RBRF11"><a href="/funds/RBRF11">RBRF11 - RBR ALPHA MULTIESTRATÉGIA REAL ESTATE FDO INV IMOB</a></option>
+<option value="RBRL11"><a href="/funds/RBRL11">RBRL11 - RBR LOG FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="RBRP11"><a href="/funds/RBRP11">RBRP11 - FDO INV IMOB RBR PROPERTIES - FII</a></option>
+<option value="RBRR11"><a href="/funds/RBRR11">RBRR11 - FDO INV IMOB - FII RBR RENDIMENTO HIGH GRADE</a></option>
+<option value="RBRS11"><a href="/funds/RBRS11">RBRS11 - RIO BRAVO RENDA RESIDENCIAL FDO. INVEST. IMOB.</a></option>
+<option value="RBRY11"><a href="/funds/RBRY11">RBRY11 - FDO INV IMOB RBR PRIVATE CRÉDITO IMOB</a></option>
+<option value="RBTS11"><a href="/funds/RBTS11">RBTS11 - RB CAPITAL TFO SITUS FUNDO DE INVESTIMENTO IMOBILIÁRIO - FII</a></option>
+<option value="RBVA11"><a href="/funds/RBVA11">RBVA11 - FDO INV IMOB RIO BRAVO RENDA VAREJO - FII</a></option>
+<option value="RBVO11"><a href="/funds/RBVO11">RBVO11 - RIO BRAVO CRÉDITO IMOBILIÁRIO II FDO INV IMOB -FII</a></option>
+<option value="RCFA11"><a href="/funds/RCFA11">RCFA11 - GRUPO RCFA FDO INV IMOB</a></option>
+<option value="RCRB11"><a href="/funds/RCRB11">RCRB11 - FDO INV IMOB RIO BRAVO RENDA CORPORATIVA</a></option>
+<option value="RDES11"><a href="/funds/RDES11">RDES11 - RENDA DE ESCRITÓRIOS FDO INV IMOB - FII</a></option>
+<option value="RDPD11"><a href="/funds/RDPD11">RDPD11 - BB RENDA DE PAPEIS IMOB II FDO INV IMOB - FII</a></option>
+<option value="RECH11"><a href="/funds/RECH11">RECH11 - FDO INV IMOB - REC HOTELARIA</a></option>
+<option value="RECR11"><a href="/funds/RECR11">RECR11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO - FII REC RECEBÍVEIS IMOBILIÁRIOS</a></option>
+<option value="RECT11"><a href="/funds/RECT11">RECT11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO - FII REC RENDA IMOBILIÁRIA</a></option>
+<option value="RECX11"><a href="/funds/RECX11">RECX11 - FDO. INV. IMOB. REC FUNDO DE FUNDOS</a></option>
+<option value="RELG11"><a href="/funds/RELG11">RELG11 - FDO INV. IMOB. REC LOGISTICA</a></option>
+<option value="RFOF11"><a href="/funds/RFOF11">RFOF11 - FDO. INVEST. IMOB. RB CAPITAL I FUNDO DE FUNDOS</a></option>
+<option value="RNDP11"><a href="/funds/RNDP11">RNDP11 - BB RENDA DE PAPÉIS IMOBILIÁRIOS FDO INV IMOB - FII</a></option>
+<option value="RNGO11"><a href="/funds/RNGO11">RNGO11 - FDO INV IMOB RIO NEGRO - FII</a></option>
+<option value="RRCI11"><a href="/funds/RRCI11">RRCI11 - RB CAPITAL RECEBÍVEIS IMOB. FDO. INVEST. IMOB FII</a></option>
+<option value="RSPD11"><a href="/funds/RSPD11">RSPD11 - RB CAPITAL DESENVOLVIMENTO RESIDENCIAL III FUNDO DE INVESTIMENTO IMOBILIÁRIO - FII</a></option>
+<option value="RVBI11"><a href="/funds/RVBI11">RVBI11 - VBI REITS FOF - FDO. INV. IMOB</a></option>
+<option value="RZAK11"><a href="/funds/RZAK11">RZAK11 - RIZA AKIN FDO. INV. IMOB. FII</a></option>
+<option value="RZTR11"><a href="/funds/RZTR11">RZTR11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO RIZA TERRAX</a></option>
+<option value="SAAG11"><a href="/funds/SAAG11">SAAG11 - SANTANDER AGÊNCIAS FDO INV IMOB - FII</a></option>
+<option value="SADI11"><a href="/funds/SADI11">SADI11 - SANTANDER PAPEIS IMOB CDI FDO INV IMOB</a></option>
+<option value="SAIC11B"><a href="/funds/SAIC11B">SAIC11B - FDO INV IMOB - FII SIA CORPORATE</a></option>
+<option value="SARE11"><a href="/funds/SARE11">SARE11 - SANTANDER RENDA DE ALUGUÉIS FDO. INVEST. IMOB.</a></option>
+<option value="SCPF11"><a href="/funds/SCPF11">SCPF11 - FDO INV IMOB SCP</a></option>
+<option value="SDIL11"><a href="/funds/SDIL11">SDIL11 - SDI LOGÍSTICA RIO FDO INV IMOB - FII</a></option>
+<option value="SDIP11"><a href="/funds/SDIP11">SDIP11 - SDI PROPERTIES - FDO INV. IMOB</a></option>
+<option value="SEQR11"><a href="/funds/SEQR11">SEQR11 - SEQUOIA III RENDA IMOBILIÁRIA – FDO. INV. IMOB.</a></option>
+<option value="SFND11"><a href="/funds/SFND11">SFND11 - FDO INV IMOB SÃO FERNANDO</a></option>
+<option value="SHDP11B"><a href="/funds/SHDP11B">SHDP11B - FDO INV IMOB - FII SHOPPING PARQUE D. PEDRO</a></option>
+<option value="SHOP11"><a href="/funds/SHOP11">SHOP11 - MULTI SHOPPINGS FDO INV IMOB - FII</a></option>
+<option value="SHPH11"><a href="/funds/SHPH11">SHPH11 - FDO INV IMOB SHOPPING PÁTIO HIGIENÓPOLIS</a></option>
+<option value="SJAU11"><a href="/funds/SJAU11">SJAU11 - SJ AU LOGÍSTICA FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="SNCI11"><a href="/funds/SNCI11">SNCI11 - SUNO RECEBÍVEIS IMOBILIÁRIOS FDO DE INV IMOB</a></option>
+<option value="SNFF11"><a href="/funds/SNFF11">SNFF11 - SUNO FUNDO DE FUNDOS DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="SPTW11"><a href="/funds/SPTW11">SPTW11 - SP DOWNTOWN FDO INV IMOB - FII</a></option>
+<option value="SPVJ11"><a href="/funds/SPVJ11">SPVJ11 - FUNDO DE INVESTIMENTO IMOBILIÁRIO SUCCESPAR VAREJO</a></option>
+<option value="STRX11"><a href="/funds/STRX11">STRX11 - STARX FDO INV IMOB - FII</a></option>
+<option value="TBOF11"><a href="/funds/TBOF11">TBOF11 - FDO INV IMOB - FII TB OFFICE</a></option>
+<option value="TCIN11"><a href="/funds/TCIN11">TCIN11 - FDO. INVEST. IMOB. TOURMALET V - ED. CIDADE NOVA</a></option>
+<option value="TELD11"><a href="/funds/TELD11">TELD11 - TELLUS DESENVOLVIMENTO LOGÍSTICO FDO. INVEST. IMOB</a></option>
+<option value="TEPP11"><a href="/funds/TEPP11">TEPP11 - TELLUS PROPERTIES FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="TGAR11"><a href="/funds/TGAR11">TGAR11 - FDO INV IMOB TG ATIVO REAL</a></option>
+<option value="THRA11"><a href="/funds/THRA11">THRA11 - FDO INV IMOB - FII CYRELA THERA CORPORATE</a></option>
+<option value="TORD11"><a href="/funds/TORD11">TORD11 - TORDESILHAS EI FDO. INV. IMOB.</a></option>
+<option value="TRNT11"><a href="/funds/TRNT11">TRNT11 - FDO INV IMOB - FII TORRE NORTE</a></option>
+<option value="TRXF11"><a href="/funds/TRXF11">TRXF11 - TRX REAL ESTATE FDO. INV. IMOB. - FII</a></option>
+<option value="TRXL11"><a href="/funds/TRXL11">TRXL11 - TRX REALTY LOGÍSTICA RENDA I FDO INV IMOB - FII</a></option>
+<option value="UBSR11"><a href="/funds/UBSR11">UBSR11 - FDO INV IMOB - FII UBS (BR) RECEB IMOB</a></option>
+<option value="URPR11"><a href="/funds/URPR11">URPR11 - URCA PRIME RENDA FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="VCJR11"><a href="/funds/VCJR11">VCJR11 - VECTIS JUROS REAL FDO INV. IMOB. - FII</a></option>
+<option value="VCRR11"><a href="/funds/VCRR11">VCRR11 - VECTIS RENDA RESIDENCIAL FDO. INV. IMOB.</a></option>
+<option value="VERE11"><a href="/funds/VERE11">VERE11 - FDO INV IMOB VEREDA - FII</a></option>
+<option value="VGHF11"><a href="/funds/VGHF11">VGHF11 - VALORA HEDGE FUND FDO. INV. IMOB.</a></option>
+<option value="VGIP11"><a href="/funds/VGIP11">VGIP11 - VALORA CRI ÍNDICE DE PREÇO FDO INVEST. IMOB. FII</a></option>
+<option value="VGIR11"><a href="/funds/VGIR11">VGIR11 - VALORA RE III FDO INV IMOB - FII</a></option>
+<option value="VIFI11"><a href="/funds/VIFI11">VIFI11 - VINCI INSTRUMENTOS FINANCEIROS FDO INV IMOB - FII</a></option>
+<option value="VILG11"><a href="/funds/VILG11">VILG11 - VINCI LOGÍSTICA FUNDO DE INVESTIMENTO IMOBILIÁRIO - FII</a></option>
+<option value="VINO11"><a href="/funds/VINO11">VINO11 - VINCI OFFICES FUNDO DE INVESTIMENTO IMOBILIÁRIO</a></option>
+<option value="VISC11"><a href="/funds/VISC11">VISC11 - VINCI SHOPPING CENTERS FDO INVEST IMOB - FII</a></option>
+<option value="VIUR11"><a href="/funds/VIUR11">VIUR11 - VINCI IMOVEIS URBANOS FUNDO DE INVESTIMENTO IMOBILIARIO</a></option>
+<option value="VJFD11"><a href="/funds/VJFD11">VJFD11 - JFDCAM FUNDO DE INVESTIMENTO IMOBILIÁRIO FII</a></option>
+<option value="VLOL11"><a href="/funds/VLOL11">VLOL11 - FDO INV IMOB - FII VILA OLÍMPIA CORPORATE</a></option>
+<option value="VOTS11"><a href="/funds/VOTS11">VOTS11 - VOTORANTIM SECURITIES MASTER FDO INV IMOB - FII</a></option>
+<option value="VPSI11"><a href="/funds/VPSI11">VPSI11 - FDO INV IMOB POLO SHOPPING INDAIATUBA</a></option>
+<option value="VRTA11"><a href="/funds/VRTA11">VRTA11 - FATOR VERITA FDO INV IMOB - FII</a></option>
+<option value="VSHO11"><a href="/funds/VSHO11">VSHO11 - FDO INV IMOB VOTORANTIM SHOPPING</a></option>
+<option value="VSLH11"><a href="/funds/VSLH11">VSLH11 - VERSALHES RECEBÍVEIS IMOBILIÁRIOS - FDO. INV. IMOB</a></option>
+<option value="VTLT11"><a href="/funds/VTLT11">VTLT11 - FDO INV IMOB VOTORANTIM LOGISTICA</a></option>
+<option value="VTPL11"><a href="/funds/VTPL11">VTPL11 - FDO INV. IMOB. PLUS</a></option>
+<option value="VVPR11"><a href="/funds/VVPR11">VVPR11 - FDO INV IMOB - V2 PROPERTIES</a></option>
+<option value="VXXV11"><a href="/funds/VXXV11">VXXV11 - VX XII - Fundo de Investimento Imobiliário</a></option>
+<option value="WPLZ11"><a href="/funds/WPLZ11">WPLZ11 - FDO INV IMOB - FII SHOPPING WEST PLAZA</a></option>
+<option value="WTSP11B"><a href="/funds/WTSP11B">WTSP11B - FDO INV IMOB - OURINVEST RE I</a></option>
+<option value="XPCI11"><a href="/funds/XPCI11">XPCI11 - XP CREDITO IMOBILIÁRIO - FDO INV IMOB</a></option>
+<option value="XPCM11"><a href="/funds/XPCM11">XPCM11 - XP CORPORATE MACAÉ FDO INV IMOB - FII</a></option>
+<option value="XPHT11"><a href="/funds/XPHT11">XPHT11 - XP HOTÉIS - FDO INV IMOB - FII</a></option>
+<option value="XPIN11"><a href="/funds/XPIN11">XPIN11 - XP INDUSTRIAL FDO INV IMOB - FII</a></option>
+<option value="XPLG11"><a href="/funds/XPLG11">XPLG11 - XP LOG FDO INV IMOB - FII</a></option>
+<option value="XPML11"><a href="/funds/XPML11">XPML11 - XP MALLS FDO INV IMOB FII</a></option>
+<option value="XPPR11"><a href="/funds/XPPR11">XPPR11 - XP PROPERTIES FDO. INV. IMOB.</a></option>
+<option value="XPSF11"><a href="/funds/XPSF11">XPSF11 - XP SELECTION FDO DE FUNDOS INV IMOB - FII</a></option>
+<option value="XTED11"><a href="/funds/XTED11">XTED11 - TRX EDIFÍCIOS CORPORATIVOS FDO INV IMOB - FII</a></option>
+<option value="YCHY11"><a href="/funds/YCHY11">YCHY11 - YAGUARA CAPITAL HIGH YIELD FDO INV IMOB</a></option>
+<option value="YUFI11B"><a href="/funds/YUFI11B">YUFI11B - YUCA FDO INV. IMOB.</a></option></select>
+<button class="btn-search" type="submit">
+<img alt="Buscar" src="/assets/icons/search-azul-6c8a9ad9f20cdb72bdb7a8fb980d8256f13f569aead6fd767533c48e8a2d8206.png"/>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<section id="funds-show">
+<section id="head">
+<div class="container">
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div class="section-divider"></div>
+<div class="ticker-wrapper">
+<h1 class="section-title">HTMX11</h1>
+<a class="hidden funds-data-item" data-funds-data-subscriber="true" href="/funds-data?resource=fund&amp;value=HTMX11" target="_blank">
+<img alt="Funds Data Buildings" src="/assets/funds-data-btn-00aa88afcbf9ecee3198d25403c36519d3ef26e506d26e918188c6e49c350555.png"/>
+</a>
+</div>
+<h3 class="section-subtitle">FDO INV IMOB - FII HOTEL MAXINVEST</h3>
+<div id="stock-price-wrapper">
+<div id="stock-price">
+<span class="price">
+                  R$ 99,19
+              </span>
+<span class="percentage negative">
+                -0,76%
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="container">
+<section id="main-indicators">
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div data-flickity='{
+            "autoPlay": false,
+            "prevNextButtons": false,
+            "groupCells": true,
+            "contain": true
+          }' id="main-indicators-carousel">
+<div class="carousel-cell">
+<span class="indicator-title">Liquidez Diária</span>
+<span class="indicator-value">
+                1.943
+              </span>
+<span class="indicator-value-unit">negociações</span>
+</div>
+<div class="carousel-cell">
+<span class="indicator-title">Último Rendimento</span>
+<span class="indicator-value">
+                R$ 0,00
+              </span>
+</div>
+<div class="carousel-cell">
+<span class="indicator-title">Dividend Yield</span>
+<span class="indicator-value">
+                0,00%
+              </span>
+</div>
+<div class="carousel-cell">
+<span class="indicator-title">Patrimônio Líquido</span>
+<span class="indicator-value">
+                R$ 163,6 mi
+              </span>
+</div>
+<div class="carousel-cell">
+<span class="indicator-title">Valor Patrimonial</span>
+<span class="indicator-value">
+                R$ 130,19
+              </span>
+</div>
+<div class="carousel-cell">
+<span class="indicator-title">Rentab. no mês</span>
+<span class="indicator-value">
+                -28,14%
+              </span>
+</div>
+<div class="carousel-cell">
+<span class="indicator-title">P/VP</span>
+<span class="indicator-value">
+                0,76
+              </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="super-banner-gestao">
+<a href="https://www.suno.com.br/asset/fundos/snff11/?utm_source=fundsexplorer&amp;utm_medium=banner&amp;utm_campaign=asset_snff11" target="_blank">
+<img alt="SA21" class="image-desktop" height="109px" src="https://funds-explorer-s3.s3.amazonaws.com/banners/1624888584108_1230x109-1.webp" style="width: 100%; height: auto;" width="1230px"/>
+<img alt="SA21" class="image-mobile" height="182px" src="https://funds-explorer-s3.s3.amazonaws.com/banners/1624888584109_mobile_346x182-1.webp" style="width: 100%; height: auto;" width="346px"/>
+</a>
+</div>
+<section id="description">
+<div class="row">
+<div class="col-md-6 col-md-offset-3 col-xs-12">
+<div id="description-links">
+<a class="selected" data-type="description" href="javascript:;">DESCRIÇÃO</a>
+</div>
+</div>
+<div class="row">
+<div class="col-md-8 col-md-offset-2 col-xs-12">
+<div id="description-content-wrapper">
+<div class="description-content selected" id="description-content-description">
+<div data-simplebar="">
+<p>
+<p class="MsoNormal"><b><span style="font-size:14.0pt;line-height:107%">HTMX11 –
+Um Fundo De Hotéis<o:p></o:p></span></b></p>
+<p class="MsoNormal" style="text-align:justify">HTMX11 é um fundo imobiliário do
+tipo tijolo, ou seja, <span class="GramE">seus investimentos tem</span> como base
+principal, empreendimentos imobiliários físicos.</p>
+<p class="MsoNormal" style="text-align:justify">Fundos de tijolo como o <b>HTMX11
+</b>tem o objetivo de comprar ou construir imóveis para alugar e gerar uma
+renda mensal. Fundos desse tipo, geralmente buscam uma renda constante com
+potencial de valorização e reajustes de aluguéis.</p>
+<p class="MsoNormal" style="text-align:justify">O <b>FII HOTEL MAXINVEST </b>é um
+fundo de investimento imobiliário do tipo ANBIMA gestão ativa com segmento em
+hotéis. É constituído sob a forma de condomínio fechado, com prazo de duração
+indeterminado, regido pelas disposições legais e regulamentares que lhe forem
+aplicáveis.</p>
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:107%">Características do fundo HTMX11<o:p></o:p></span></b></p>
+<p class="MsoNormal" style="text-align:justify">O <b>Fundo Imobiliário Hotel Maxinvest</b> foi constituído em 2007 com intuito de
+aproveitar a recuperação do mercado hoteleiro da cidade de São Paulo, que se
+previa ocorrer nos anos subsequentes. </p>
+<p class="MsoNormal" style="text-align:justify">Sua administração e feita pelo
+BTG Pactual Serviços Financeiros S.A. DTVM.</p>
+<p class="MsoNormal" style="text-align:justify">Os recursos serão aplicados sob a
+gestão da Administradora, segundo uma política de investimentos definida de
+forma a proporcionar ao cotista uma remuneração para o investimento realizado.</p>
+<p class="MsoNormal" style="text-align:justify">O objetivo do fundo é a aquisição
+de imóveis comerciais, prontos ou em construção, ou outros tipos de imóveis
+onde poderão ser desenvolvidos empreendimentos comerciais.</p>
+<p class="MsoNormal" style="text-align:justify">As cotas do <b>Hotel Maxinvest&lt;</b> são negociadas com o código (ticker) <b>HTMX11</b> no mercado de bolsa da B3 - Brasil,
+Bolsa e Balcão.</p>
+<p class="MsoNormal" style="text-align:justify">Sua taxa de administração é de
+0,50% ao ano sobre o patrimônio com mínimo de R$ 15.000,00 mensais corrigido
+pelo IGPM, acrescidos de 0,30% ao ano do valor do patrimônio líquido.</p>
+<p class="MsoNormal" style="text-align:justify">É também cobrado uma taxa de gerenciamento
+de ativo de 0,30% sobre o valor dos imóveis, corrigido anualmente de acordo com
+a avaliação especializada.</p>
+<p class="MsoNormal" style="text-align:justify">Além desses, há
+também um taxa de consultoria de 0,20% ao ano e uma taxa de performance de 20%
+sobre o patrimônio líquido.</p>
+<p class="MsoNormal" style="text-align:justify">A política de distribuição de <b>rendimentos
+do HTMX11 </b>deve distribuir a seus cotistas, no mínimo, 95% dos resultados
+auferidos, apurados segundo o regime de caixa.</p>
+<p class="MsoNormal" style="text-align:justify">No entanto, o resultado auferido
+num determinado período será distribuído aos cotistas, mensalmente, até o 5º
+dia útil do mês subsequente ao recebimento do aluguel, a título de antecipação
+dos resultados a serem distribuídos.</p>
+<p class="MsoNormal" style="text-align:justify"><b><span style="font-size:14.0pt;
+line-height:107%">FII Hotel Maxinvest – HTMX11</span></b></p>
+<p class="MsoNormal" style="text-align:justify">As aplicações realizadas no fundo
+não contam com garantia do Administrador ou do Fundo Garantidor de Crédito, não
+podendo o administrador ser responsabilizado por eventuais depreciações dos
+ativos que compõem a carteira do fundo.</p>
+<p class="MsoNormal" style="text-align:justify">Portanto, é recomendado a leitura
+cuidadosa do prospecto e do regulamento do fundo de investimento pelo
+investidor ao aplicar seus recursos.</p>
+<p class="MsoNormal" style="text-align:justify">Para conferir outros dados e
+indicadores do <b>HTMX11</b>, continue navegando em nosso site. Temos todas as
+informações necessárias disponíveis aqui.</p>
+</p>
+</div>
+<div id="description-content-description-overlay"></div>
+</div>
+</div>
+</div>
+</div>
+</div></section>
+<div class="super-banner-funds">
+<a href="https://www.suno.com.br/asset/fundos/snci11/" target="_blank">
+<img alt="SA21" class="image-desktop" height="227px" src="https://funds-explorer-s3.s3.amazonaws.com/banners/1634297705811_pg-fundos-ferramentas.webp" style="width: 100%; height: auto;" width="1474px"/>
+<img alt="SA21" class="image-mobile" height="365px" src="https://funds-explorer-s3.s3.amazonaws.com/banners/1634297705813_mobile_Banner-mobile.webp" style="width: 100%; height: auto;" width="692px"/>
+</a>
+</div>
+<section id="quotations">
+<div class="row">
+<div class="col-md-12">
+<div class="section-head toggle up">
+<h2 class="section-title">Cotações <span>do HTMX11</span></h2>
+<a class="section-toggle up" href="javascript:;"></a>
+</div>
+<div class="section-body">
+<div data-chart="https://chart.fundsexplorer.com.br/chart/htmx11/" id="band-aid-chart">
+<span class="loading">Carregando...</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="basic-infos">
+<div class="row">
+<div class="col-md-12">
+<div class="section-head toggle up">
+<h2 class="section-title">Inf. Básicas <span>do HTMX11</span></h2>
+<a class="section-toggle up" href="javascript:;"></a>
+</div>
+<div class="section-body">
+<div class="row">
+<div class="col-md-6 col-xs-12">
+<ul>
+<li>
+<div class="icon-wrapper">
+<img alt="Razão Social" src="/assets/icons/funds/show/razao-social-a19e9bba8a92b1cbbb6efdd2f25a3e3ede0e513223308112d7256cabece69277.png">
+</img></div>
+<div class="text-wrapper">
+<span class="title">Razão Social</span>
+<span class="description">
+                        FDO INV IMOB - FII HOTEL MAXINVEST
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Data da Constituição" src="/assets/icons/funds/show/data-constituicao-e7236a489da5d3146df6a5841eda846f4a4164370c50987ce3175fd89020ef13.png">
+</img></div>
+<div class="text-wrapper">
+<span class="title">Data da constituição do fundo</span>
+<span class="description">
+                          N/A
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Cotas emitidas" src="/assets/icons/funds/show/cotas-emitidas-0eb4e1f4936b1240b0685ddb038e8bda181db3745d27b580012a1441146e52ee.png">
+</img></div>
+<div class="text-wrapper">
+<span class="title">Cotas emitidas</span>
+<span class="description">
+                        714.516
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Patrimônio Inicial" src="/assets/icons/funds/show/patrimonio-inicial-d060be6ca73d4f9a6e72088f5aa87bc94d45db27635c2213077aaa3cc772c4ef.png">
+</img></div>
+<div class="text-wrapper">
+<span class="title">Patrimônio Inicial</span>
+<span class="description">
+                        R$ 61.652.806,77
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Valor inicial da cota" src="/assets/icons/funds/show/valor-inicial-cota-7e62cb3d02a0c3edc061908277e481c27eb7272f2a36ff7fdc93fb2524069d12.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Valor inicial da cota</span>
+<span class="description">
+                        R$ 86,29
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Tipo de gestão" src="/assets/icons/funds/show/tipo-gestao-6a9bafcfd813a5f49746cb5e2387e3d13671c8be9a87c38b30efc638ab0fb064.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Tipo de gestão</span>
+<span class="description">
+                        Ativa
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Taxa de performance" src="/assets/icons/funds/show/taxa-administracao-7375974b2114945490293283f516ed171f312180b4c8c6308a6e05f0fd40b83e.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Taxa de performance</span>
+<span class="description">
+                        20% sobre o lucro na venda dos imóveis
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Taxa de gestão" src="/assets/icons/funds/show/taxa-administracao-7375974b2114945490293283f516ed171f312180b4c8c6308a6e05f0fd40b83e.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Taxa de gestão</span>
+<span class="description">
+                          N/A
+                      </span>
+</div>
+</li>
+</ul>
+</div>
+<div class="col-md-6 col-xs-12">
+<ul>
+<li>
+<div class="icon-wrapper">
+<img alt="CNPJ" src="/assets/icons/funds/show/cnpj-df55645028b87db6f0fb003967f3a8cf14d2ddb6d48cbb605f90e3ea1e21899f.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">CNPJ</span>
+<span class="description">
+                        08.706.065/0001-69
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Público-alvo" src="/assets/icons/funds/show/publico-alvo-3ea57fe1bce0e45c5b0902ce47d642ea5a9da07cf7d1cc27bc89d53a85eb96e1.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Público-alvo</span>
+<span class="description">
+                        Investidores em Geral
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Mandato" src="/assets/icons/funds/show/mandato-28bc5e66efcc144d35a7634c43cf59ba8c7f2e1d5f65369fa2d001fc8731fcd9.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Mandato</span>
+<span class="description">
+                          Renda
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Segmento" src="/assets/icons/funds/show/segmento-a19e9bba8a92b1cbbb6efdd2f25a3e3ede0e513223308112d7256cabece69277.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Segmento</span>
+<span class="description">
+                          Hotel
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Prazo de duração" src="/assets/icons/funds/show/prazo-duracao-48956f935d8e8e2e310d2b9bbf0d1ce675fdf03b2e774fa2bdfdb1888790d987.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Prazo de duração</span>
+<span class="description">
+                        Indeterminado
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Taxa de administração" src="/assets/icons/funds/show/taxa-administracao-7375974b2114945490293283f516ed171f312180b4c8c6308a6e05f0fd40b83e.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Taxa de administração</span>
+<span class="description">
+                        0,50% aa sobre o valor total de ativos
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Taxa de gerenciamento" src="/assets/icons/funds/show/taxa-administracao-7375974b2114945490293283f516ed171f312180b4c8c6308a6e05f0fd40b83e.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Taxa de gerenciamento</span>
+<span class="description">
+                        0,30 % aa sobre o valor dos imóveis
+                      </span>
+</div>
+</li>
+<li>
+<div class="icon-wrapper">
+<img alt="Taxa de consultoria" src="/assets/icons/funds/show/taxa-administracao-7375974b2114945490293283f516ed171f312180b4c8c6308a6e05f0fd40b83e.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Taxa de consultoria</span>
+<span class="description">
+                        0,20 % aa sobre o patrimônio líquido
+                      </span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="general-data">
+<div class="row">
+<div class="col-md-12">
+<div class="section-head toggle up">
+<h2 class="section-title">Dados Gerais <span>do HTMX11</span></h2>
+<a class="section-toggle up" href="javascript:;"></a>
+</div>
+<div class="section-body">
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div data-simplebar="" id="general-data-text-wrapper">
+<div id="general-data-objective">
+<span class="title">Objetivo e política do fundo</span>
+<p class="description">
+                      O objetivo do FUNDO é a aquisição de imóveis comerciais, prontos ou em construção, ou outros tipos de imóveis onde poderão ser desenvolvidos empreendimentos comerciais, localizados em grandes   centros   comerciais,   shopping   centers,   avenidas   ou   ruas   de   grande   movimento (“Imóveis-Alvo”),  ou  de  direitos  a  eles  relativos,  com  a  finalidade  de  venda,  locação  ou arrendamento das unidades comerciais, podendo, ainda, ceder a terceiros os direitos e créditos decorrentes da venda, locação ou arrendamento.
+Os  recursos  do  FUNDO  serão  aplicados,  sob  a  gestão  da  ADMINISTRADORA,  segundo  uma política  de  investimentos  definida  de  forma  a  proporcionar  ao  cotista  uma  remuneração  para  o investimento  realizado.  A  administração  do  FUNDO  se  processará  em  atendimento  aos  seus objetivos,  nos  termos  do  artigo  2°  retro,  observando  a  política  de  investimentos  descritas  no regulamento.
+                    </p>
+</div>
+</div>
+<div id="general-data-text-wrapper-overlay"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="dividends">
+<div class="row">
+<div class="col-md-12">
+<div class="section-head toggle up">
+<h2 class="section-title">Dividendos <span>do HTMX11</span></h2>
+<a class="section-toggle up" href="javascript:;"></a>
+</div>
+<div class="section-body">
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Proventos</th>
+<th>Último</th>
+<th>3 meses</th>
+<th>6 meses</th>
+<th>12 meses</th>
+<th>Desde o IPO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retorno por cota</td>
+<td>R$ 0,0000</td>
+<td>R$ 1,2951</td>
+<td>R$ 3,7859</td>
+<td>R$ 9,1958</td>
+<td>R$ 219,9831</td>
+</tr>
+<tr>
+<td>Em relação ao valor de cota atual</td>
+<td>0,00%</td>
+<td>1,31%</td>
+<td>3,82%</td>
+<td>9,27%</td>
+<td>221,78%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div id="dividends-chart-wrapper">
+<canvas class="chart" height="400" id="chart-0" width="400"></canvas><script>
+//<![CDATA[
+(function() { var initChart = function() { var ctx = document.getElementById("chart-0"); var chart = new Chart(ctx, { type: "bar", data: {"labels":["Abril/2009","Maio/2009","Junho/2009","Julho/2009","Agosto/2009","Setembro/2009","Outubro/2009","Novembro/2009","Dezembro/2009","Janeiro/2010","Fevereiro/2010","Março/2010","Abril/2010","Maio/2010","Junho/2010","Julho/2010","Agosto/2010","Setembro/2010","Outubro/2010","Novembro/2010","Dezembro/2010","Janeiro/2011","Fevereiro/2011","Março/2011","Abril/2011","Maio/2011","Junho/2011","Julho/2011","Agosto/2011","Setembro/2011","Outubro/2011","Novembro/2011","Dezembro/2011","Janeiro/2012","Fevereiro/2012","Março/2012","Abril/2012","Maio/2012","Junho/2012","Julho/2012","Agosto/2012","Setembro/2012","Outubro/2012","Novembro/2012","Dezembro/2012","Janeiro/2013","Fevereiro/2013","Março/2013","Abril/2013","Maio/2013","Junho/2013","Julho/2013","Agosto/2013","Setembro/2013","Outubro/2013","Novembro/2013","Dezembro/2013","Janeiro/2014","Fevereiro/2014","Março/2014","Abril/2014","Maio/2014","Junho/2014","Julho/2014","Agosto/2014","Setembro/2014","Outubro/2014","Novembro/2014","Dezembro/2014","Janeiro/2015","Fevereiro/2015","Março/2015","Abril/2015","Maio/2015","Junho/2015","Julho/2015","Agosto/2015","Setembro/2015","Outubro/2015","Novembro/2015","Dezembro/2015","Janeiro/2016","Fevereiro/2016","Março/2016","Abril/2016","Maio/2016","Junho/2016","Julho/2016","Agosto/2016","Setembro/2016","Outubro/2016","Novembro/2016","Dezembro/2016","Janeiro/2017","Fevereiro/2017","Março/2017","Abril/2017","Maio/2017","Junho/2017","Julho/2017","Agosto/2017","Setembro/2017","Outubro/2017","Novembro/2017","Dezembro/2017","Janeiro/2018","Fevereiro/2018","Março/2018","Abril/2018","Maio/2018","Junho/2018","Julho/2018","Agosto/2018","Setembro/2018","Outubro/2018","Novembro/2018","Dezembro/2018","Janeiro/2019","Fevereiro/2019","Março/2019","Abril/2019","Maio/2019","Junho/2019","Julho/2019","Agosto/2019","Setembro/2019","Outubro/2019","Novembro/2019","Dezembro/2019","Janeiro/2020","Fevereiro/2020","Março/2020"],"labelColors":["rgba(0, 81, 116, 1)"],"datasets":[{"label":"Dividendos","data":[0.94759055,1.03483373,1.18559244,1.15453092,1.05159653,1.16679181,1.09849035,1.1408254,1.03475319,0.65376856,0.86531492,1.469220264,1.30188855,1.48953634,1.27263111,1.15327318,1.1331824,1.33821307,1.36035842,1.2895706,1.63926373,0.96122589,1.17504018,1.34311103,1.78879229,2.2998506,2.24460761,2.84728259,1.7372549,2.25675554,3.20257791,2.572081778,2.900942526,2.42982072,1.76768894,1.87308814,2.96345218,2.55111121,4.97444147,3.34947527,2.65010061,2.07537439,3.043054,2.47929913,3.13095319,2.33012907,2.6521067,2.40280909,3.97660622,4.96395893,3.85724909,3.55826755,4.16562955,6.760977725,7.90208032,6.63629156,4.997695489,3.527364482,1.947902636,3.153904559,3.055186322,2.922536696,3.066332175,3.212148447,2.008861173,2.517596625,3.373092037,3.210297908,1.92985642,2.149426969,0.760921715,1.317138469,0.969242144,1.239776394,1.39804588,0.779628742,0.68,0.698581389,0.7,1.495794944,1.549390035,0.417293734,1.118118321,0.419290135,0.500182599,0.407448035,0.511912959,1.157885492,0.687693963,0.472594436,0.380876716,0.388598869,0.4850099646,0.3016914456,0.171923044612855,0.265838921856009,0.749009196039179,1.05725375348538,0.737417557374705,0.702790528705226,0.502198800672053,0.483520653106456,0.394480401444198,0.890051449560306,0.959266837062987,0.710967183813541,0.327708130764281,0.425360209480232,0.627145233073568,0.507837965610924,0.573372408307714,0.49699630013584,0.945055095803246,0.78782903767,1.22885666154286,0.988448166154286,1.31065189104168,1.078076348,0.580646305497962,0.770606205762494,1.0693746,1.60085137,0.635117296,0.619847724,0.552604105,0.932071754,1.042402614,0.981430615,0.46699298,0.582714025,0.712391413,0.0],"backgroundColor":"rgba(0, 81, 116, 1)","borderColor":"rgba(0, 81, 116, 1)","borderWidth":1}]}, options: {"maintainAspectRatio":false,"responsive":true,"scales":{"yAxes":[{"ticks":{"beginAtZero":true,"callback":function(value, index, values) { return "R$ " + value.toFixed(2).replace(".", ","); }}}]},"tooltips":{"enabled":true,"mode":"single","callbacks":{"label":function(tooltipItems, data) { return "R$ " + tooltipItems.yLabel.toFixed(2).replace(".", ","); }}}}, plugins: {}, }); }; if (typeof Chart !== "undefined" && Chart !== null) { initChart(); } else { /* W3C standard */ if (window.addEventListener) { window.addEventListener("load", initChart, false); } /* IE */ else if (window.attachEvent) { window.attachEvent("onload", initChart); } } })();
+//]]>
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div id="yields-chart-wrapper">
+<canvas class="chart" height="400" id="chart-1" width="400"></canvas><script>
+//<![CDATA[
+(function() { var initChart = function() { var ctx = document.getElementById("chart-1"); var chart = new Chart(ctx, { type: "line", data: {"labels":["Janeiro/2016","Fevereiro/2016","Março/2016","Abril/2016","Maio/2016","Junho/2016","Julho/2016","Agosto/2016","Setembro/2016","Outubro/2016","Novembro/2016","Dezembro/2016","Janeiro/2017","Fevereiro/2017","Março/2017","Abril/2017","Maio/2017","Junho/2017","Julho/2017","Agosto/2017","Setembro/2017","Outubro/2017","Novembro/2017","Dezembro/2017","Janeiro/2018","Fevereiro/2018","Março/2018","Abril/2018","Maio/2018","Junho/2018","Julho/2018","Agosto/2018","Setembro/2018","Outubro/2018","Novembro/2018","Dezembro/2018","Janeiro/2019","Fevereiro/2019","Março/2019","Abril/2019","Maio/2019","Junho/2019","Julho/2019","Agosto/2019","Setembro/2019","Outubro/2019","Novembro/2019","Dezembro/2019","Janeiro/2020","Fevereiro/2020","Março/2020"],"labelColors":["rgba(0, 81, 116, 1)"],"datasets":[{"label":"Dividend Yield","data":[0.461271586732183,1.41485849337085,1.94618977623306,0.567741554732732,0.441161604842028,0.46283652732044,0.945399574064075,0.853064181367804,0.389622846044709,0.316639486146873,0.323369272400738,0.409317832086531,0.254426698493329,0.142353160341207,0.202920350448859,0.584598379286095,0.877583259038571,0.610804970132376,0.588261397748745,0.441105665939441,0.403269935868604,0.319417329104614,0.735579710380418,0.781480111660275,0.542723041079039,0.237469659974117,0.303720249539616,0.448024884321737,0.406270372488739,0.483858572411573,0.411420778258146,0.810858083057268,0.675552253189847,0.938058520261725,0.691222493814186,0.885575602055189,0.719053123457614,0.367520922525452,0.475682843063268,0.669656584632726,0.982117404907975,0.309375661746797,0.342041564948681,0.323538703161593,0.589545701454775,0.626105239954352,0.521205849707913,0.248426949675497,0.347266999404052,0.453954892627286,0.0],"backgroundColor":"rgba(0, 81, 116, 0.2)","borderColor":"rgba(0, 81, 116, 1)","borderWidth":1}]}, options: {"maintainAspectRatio":false,"responsive":true,"scales":{"yAxes":[{"ticks":{"beginAtZero":true,"callback":function(value, index, values) { return value.toFixed(2).replace(".", ",") + "%"; }}}]},"tooltips":{"enabled":true,"mode":"single","callbacks":{"label":function(tooltipItems, data) { return tooltipItems.yLabel.toFixed(2).replace(".", ",") + "%"; }}}}, plugins: {}, }); }; if (typeof Chart !== "undefined" && Chart !== null) { initChart(); } else { /* W3C standard */ if (window.addEventListener) { window.addEventListener("load", initChart, false); } /* IE */ else if (window.attachEvent) { window.attachEvent("onload", initChart); } } })();
+//]]>
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="simulation">
+<div class="row">
+<div class="col-md-12">
+<div class="section-head toggle up">
+<h2 class="section-title">Simulação <span>do HTMX11</span></h2>
+<a class="section-toggle up" href="javascript:;"></a>
+</div>
+<div class="section-body">
+<div class="row">
+<div class="col-md-6 col-xs-12">
+<ul>
+<li>
+<div class="img-wrapper">
+<img alt="Seta para cima" src="/assets/icons/funds/show/seta-cima-468e50454d1e8b3be4f1ae8a77301a90d868ae348192499cea45d15d8444c856.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Aplicação em 12 meses</span>
+<span class="content up">50.000,00</span>
+</div>
+</li>
+<li>
+<div class="img-wrapper">
+<img alt="Seta para cima" src="/assets/icons/funds/show/seta-cima-468e50454d1e8b3be4f1ae8a77301a90d868ae348192499cea45d15d8444c856.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Montante final na <b>poupança</b></span>
+<span class="content up">R$ 50.983,27</span>
+</div>
+</li>
+<li>
+<div class="img-wrapper">
+<img alt="Seta para baixo" src="/assets/icons/funds/show/seta-baixo-cf3813754bda75e83b3986cf2a9b0c7adb161cdcdc763df53401573d3a7882a1.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Montante final no fundo <b>HTMX11</b></span>
+<span class="content down"> R$ 41.697,97</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="col-md-6 col-xs-12">
+<ul>
+<li>
+<div class="img-wrapper">
+<img alt="Seta para baixo" src="/assets/icons/funds/show/seta-baixo-cf3813754bda75e83b3986cf2a9b0c7adb161cdcdc763df53401573d3a7882a1.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Rendimentos (isento de IR) no fundo <b>HTMX11</b></span>
+<span class="content down">R$ 2.706,62</span>
+</div>
+</li>
+<li>
+<div class="img-wrapper">
+<img alt="Seta para baixo" src="/assets/icons/funds/show/seta-baixo-cf3813754bda75e83b3986cf2a9b0c7adb161cdcdc763df53401573d3a7882a1.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title">Valorização patrimonial no fundo <b>HTMX11</b></span>
+<span class="content down">R$ 38.991,35</span>
+</div>
+</li>
+<li>
+<div class="img-wrapper">
+<img alt="Seta para baixo" src="/assets/icons/funds/show/seta-baixo-cf3813754bda75e83b3986cf2a9b0c7adb161cdcdc763df53401573d3a7882a1.png"/>
+</div>
+<div class="text-wrapper">
+<span class="title"><b>HTMX11 x Poupança</b></span>
+<span class="content down">-22,27%</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="patrimonial-value">
+<div class="row">
+<div class="col-md-12">
+<div class="section-head toggle up">
+<h2 class="section-title">Valor Patrimonial <span>do HTMX11</span></h2>
+<a class="section-toggle up" href="javascript:;"></a>
+</div>
+<div class="section-body">
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div id="patrimonial-value-chart-wrapper">
+<canvas class="chart" height="400" id="chart-2" width="400"></canvas><script>
+//<![CDATA[
+(function() { var initChart = function() { var ctx = document.getElementById("chart-2"); var chart = new Chart(ctx, { type: "line", data: {"labels":["Junho/2015","Julho/2015","Agosto/2015","Setembro/2015","Outubro/2015","Novembro/2015","Dezembro/2015","Janeiro/2016","Fevereiro/2016","Março/2016","Abril/2016","Maio/2016","Junho/2016","Julho/2016","Agosto/2016","Setembro/2016","Outubro/2016","Novembro/2016","Dezembro/2016","Janeiro/2017","Fevereiro/2017","Março/2017","Abril/2017","Maio/2017","Junho/2017","Julho/2017","Agosto/2017","Setembro/2017","Outubro/2017","Novembro/2017","Dezembro/2017","Janeiro/2018","Fevereiro/2018","Março/2018","Abril/2018","Maio/2018","Junho/2018","Julho/2018","Agosto/2018","Setembro/2018","Outubro/2018","Novembro/2018","Dezembro/2018","Janeiro/2019","Fevereiro/2019","Março/2019","Abril/2019","Maio/2019","Junho/2019","Julho/2019","Agosto/2019","Setembro/2019","Outubro/2019","Novembro/2019","Dezembro/2019","Janeiro/2020","Fevereiro/2020","Março/2020","Abril/2020","Maio/2020","Junho/2020","Julho/2020","Agosto/2020","Setembro/2020","Outubro/2020","Novembro/2020","Dezembro/2020","Janeiro/2021","Fevereiro/2021","Março/2021","Abril/2021","Maio/2021","Junho/2021","Julho/2021","Agosto/2021","Setembro/2021"],"datasets":[{"label":"VP","data":[158.6126,158.7333,158.2946,158.5289,158.0184,157.0152,151.6962,150.9852,150.9064,151.2627,150.2941,150.2483,150.4748,149.9328,148.8927,144.1875,141.59,141.8941,137.53,136.836795,138.0329,138.234413,151.045005,147.80599,147.728028,147.354598,146.966852,147.133646,147.071455,146.976282,134.795493,134.40294,134.260445,134.321669,134.760547,134.670258,134.757494,134.943568,134.598643,134.566816,134.239251,133.746028,139.996126,139.078334,138.983599,138.788465,138.40799,137.494426,137.623391,137.603306,137.62004,137.555299,137.580036,137.124968,148.598441,146.650724,146.535675,146.206415,145.848499,145.645315,145.388549,145.008284,144.805101,144.655283,144.420582,144.270257,129.199412,132.159936,131.032963,130.876197,130.777298,130.574237,130.36902,130.228444,130.175554,130.186857],"backgroundColor":"rgba(0, 81, 116, 0.2)","borderColor":"rgba(0, 81, 116, 1)","borderWidth":1}]}, options: {"maintainAspectRatio":false,"responsive":true,"scales":{"yAxes":[{"ticks":{"beginAtZero":true,"callback":function(value, index, values) { return "R$ " + value.toFixed(2).replace(".", ","); }}}]},"tooltips":{"enabled":true,"mode":"single","callbacks":{"label":function(tooltipItems, data) { return "R$ " + tooltipItems.yLabel.toFixed(2).replace(".", ","); }}}}, plugins: {}, }); }; if (typeof Chart !== "undefined" && Chart !== null) { initChart(); } else { /* W3C standard */ if (window.addEventListener) { window.addEventListener("load", initChart, false); } /* IE */ else if (window.attachEvent) { window.attachEvent("onload", initChart); } } })();
+//]]>
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="fund-actives">
+<div class="row">
+<div class="col-md-12">
+<div class="section-head toggle up">
+<h2 class="section-title">Ativos do <span>Fundo</span><span>HTMX11</span></h2>
+<a class="section-toggle up" href="javascript:;"></a>
+</div>
+<div class="section-body">
+<div class="row">
+<div class="col-md-6 col-xs-12">
+<div id="fund-actives-map-wrapper">
+<div id="fund-actives-map-bg"></div>
+<div class="hidden" id="fund-actives-map"></div>
+</div>
+</div>
+<div class="col-md-6 col-xs-12">
+<span id="fund-actives-chart-title">Área Bruta Locável por Estado</span>
+<div id="fund-actives-chart-info-wrapper">
+<span class="fund-actives">23 ativos</span>
+<span class="fund-states">1 estados</span>
+</div>
+<div id="fund-actives-chart">
+<canvas class="chart" height="400" id="chart-3" width="400"></canvas><script>
+//<![CDATA[
+(function() { var initChart = function() { var ctx = document.getElementById("chart-3"); var chart = new Chart(ctx, { type: "pie", data: {"labels":["SP"],"datasets":[{"data":[103764.26],"backgroundColor":["#004566","#ed0000","#eb9900","#006635","#9200e0","#006ded","#c50076","#dd4c37","#857c1e","#594493","#007188","#a80054","#850091","#7eb25e","#69e6b2","#da93e6"],"borderWidth":0}]}, options: {"maintainAspectRatio":false,"responsive":true,"cutoutPercentage":80,"legend":{"display":true,"position":"right","labels":{"usePointStyle":true}}}, plugins: {}, }); }; if (typeof Chart !== "undefined" && Chart !== null) { initChart(); } else { /* W3C standard */ if (window.addEventListener) { window.addEventListener("load", initChart, false); } /* IE */ else if (window.attachEvent) { window.attachEvent("onload", initChart); } } })();
+//]]>
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div id="fund-actives-items-wrapper">
+<span id="fund-active-items-title">Localização dos ativos</span>
+<div class="scroll-wrapper" data-simplebar="">
+<div id="fund-actives-items">
+<div class="items-wrapper funds-data-item hidden" data-funds-data-subscriber="false">
+<div class="item funds-data">
+<span class="title">Conheça cada ativo desse FII</span>
+<span class="inner-title">Através do Funds Data você tem:</span>
+<ul>
+<li>A ficha técnica do imóvel</li>
+<li>Ofertas de espaços vagos</li>
+<li>Preços pedidos de aluguel, condomínio e IPTU</li>
+<li>Relação de inquilinos e proprietários...</li>
+</ul>
+<a class="link" href="https://lp.fundsexplorer.com.br/funds-data/" target="_blank">Analisar ativos</a>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Blue Tree Faria Lima</span>
+<ul>
+<li><b>Endereço:</b> Rua da Consolação 2303, 29 Flats</li>
+<li><b>Bairro:</b> Consolação</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 354,26 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Comfort Nova Paulista</span>
+<ul>
+<li><b>Endereço:</b> Rua Vergueiro 2740, 2 Flats</li>
+<li><b>Bairro:</b> Vila Mariana</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 94.656,00 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Estanplaza Berrini</span>
+<ul>
+<li><b>Endereço:</b> Av. Eng. Luís Carl os Berrini 853, 19 flats </li>
+<li><b>Bairro:</b> Itaim Bibi</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 578,52 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Estanplaza Funchal</span>
+<ul>
+<li><b>Endereço:</b> R. Funchal 281, 27 Flats</li>
+<li><b>Bairro:</b> Vila Olimpia</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 790,37 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Estanplaza Ibirapuera</span>
+<ul>
+<li><b>Endereço:</b> Av. Jandira 501, 13 Flats</li>
+<li><b>Bairro:</b> Moema</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 399,50 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Estanplaza International</span>
+<ul>
+<li><b>Endereço:</b> Rua Fernandes Moreira 1293, 38 Flats</li>
+<li><b>Bairro:</b> Chácara Santo Antonio</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 1.112,74 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Estanplaza Nações Unidas</span>
+<ul>
+<li><b>Endereço:</b> Rua Guararapes 1889, 5 Flats</li>
+<li><b>Bairro:</b> Brooklin Novo</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 199,91 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Gran Estanplaza</span>
+<ul>
+<li><b>Endereço:</b> Rua Arizona 1517, 28 Flats</li>
+<li><b>Bairro:</b> Cidade Moncões</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 885,18 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Ibis Budget Jardins</span>
+<ul>
+<li><b>Endereço:</b> Av. Nove de Julho 3957, 20 Flats </li>
+<li><b>Bairro:</b> Jardim Paulista</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 262,98 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Ibis Budget Paulista</span>
+<ul>
+<li><b>Endereço:</b> Rua da Consolação 2303, 16 Flats</li>
+<li><b>Bairro:</b> Consolação</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 203,52 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Ibis São Paulo Paulista</span>
+<ul>
+<li><b>Endereço:</b> Av. Paulista 2355, 8 Flats</li>
+<li><b>Bairro:</b> Bela Vista</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 141,60 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Ibis Styles Faria Lima</span>
+<ul>
+<li><b>Endereço:</b> Rua Tavares Cabral 61, 74 Flats</li>
+<li><b>Bairro:</b> Pinheiros</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 1.360,86 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Intercity Nações Unidas</span>
+<ul>
+<li><b>Endereço:</b> Rua Fernandes Moreira 1371, 15 Flats</li>
+<li><b>Bairro:</b> Chácara Santo Antonio</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 422,09 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Intercity Premium Berrini</span>
+<ul>
+<li><b>Endereço:</b> Rua Alcides Lourenço da Rocha 136, 3 Flats</li>
+<li><b>Bairro:</b> Brooklin Novo</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 83,09 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Intercity Premium Ibirapuera</span>
+<ul>
+<li><b>Endereço:</b> Av. Ibirapuera 2577, 10 Flats</li>
+<li><b>Bairro:</b> Indianópolis</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 266,00 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Meliá Jardim Europa</span>
+<ul>
+<li><b>Endereço:</b> Rua João Cachoeira 111, 7 Flats</li>
+<li><b>Bairro:</b> Itaim Bibi</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 230,96 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Nobile Paulista Prime</span>
+<ul>
+<li><b>Endereço:</b> Alameda Campinas 540, 10 Flats </li>
+<li><b>Bairro:</b> Jardim Paulista</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 273,40 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Staybridge Suites</span>
+<ul>
+<li><b>Endereço:</b> Rua Bandeira Paulista 555, 61 Flats</li>
+<li><b>Bairro:</b> Itaim Bibi</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 12,69 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Tryp Berrini</span>
+<ul>
+<li><b>Endereço:</b> Rua Quintana 963, 7 Flats</li>
+<li><b>Bairro:</b> Cidade Monções</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 197,47 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Tryp Iguatemi</span>
+<ul>
+<li><b>Endereço:</b> Rua Iguatemi 150, 9 Flats</li>
+<li><b>Bairro:</b> Itaim Bibi</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 259,02 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Tryp Itaim</span>
+<ul>
+<li><b>Endereço:</b> Rua Manoel Guedes 320, 3 Flats</li>
+<li><b>Bairro:</b> Itaim Bibi</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 180,13 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Tryp Paulista</span>
+<ul>
+<li><b>Endereço:</b> Rua Haddok Lobo 294, 21 Flats</li>
+<li><b>Bairro:</b> Cerqueira César</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 632,70 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+<div class="items-wrapper">
+<div class="item">
+<span class="title">Wyndham Berrini</span>
+<ul>
+<li><b>Endereço:</b> Rua Heinrich Hertz 14, 9 Flats </li>
+<li><b>Bairro:</b> Brooklin Novo</li>
+<li><b>Cidade:</b> São Paulo - SP</li>
+<li><b>Área Bruta Locável:</b> 261,27 m<sup>2</sup></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="vacancy">
+<div class="row">
+<div class="col-md-12">
+<div class="section-head toggle up">
+<h2 class="section-title">Vacância <span>do HTMX11</span></h2>
+<a class="section-toggle up" href="javascript:;"></a>
+</div>
+<div class="section-body">
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div id="vacancy-chart-wrapper">
+<canvas class="chart" height="400" id="chart-4" width="400"></canvas><script>
+//<![CDATA[
+(function() { var initChart = function() { var ctx = document.getElementById("chart-4"); var chart = new Chart(ctx, { type: "bar", data: {"labels":["Agosto/2020","Setembro/2020","Outubro/2020","Novembro/2020","Dezembro/2020","Janeiro/2021","Fevereiro/2021","Março/2021","Abril/2021","Maio/2021","Junho/2021","Julho/2021"],"datasets":[{"label":"Ocupação Física","data":[12.0,17.0,24.0,31.0,26.0,27.0,28.0,19.0,20.0,32.0,39.0,45.0],"backgroundColor":"#00bff3"},{"label":"Vacância Física","data":[88.0,83.0,76.0,69.0,74.0,73.0,72.0,81.0,80.0,68.0,61.0,55.0],"backgroundColor":"#004566"},{"label":"Ocupação Financeira","data":[0,0,0,0,0,0,0,0,0,0,0,0],"backgroundColor":"#e67e22"},{"label":"Vacância Financeira","data":[0,0,0,0,0,0,0,0,0,0,0,0],"backgroundColor":"#f1c40f"}]}, options: {"maintainAspectRatio":false,"responsive":true,"scales":{"yAxes":[{"ticks":{"beginAtZero":true,"callback":function(value, index, values) { return value + "%"; }}}]},"tooltips":{"enabled":true,"mode":"single","callbacks":{"label":function(tooltipItems, data) { return tooltipItems.yLabel + "%"; }}}}, plugins: {}, }); }; if (typeof Chart !== "undefined" && Chart !== null) { initChart(); } else { /* W3C standard */ if (window.addEventListener) { window.addEventListener("load", initChart, false); } /* IE */ else if (window.attachEvent) { window.attachEvent("onload", initChart); } } })();
+//]]>
+</script>
+</div>
+</div>
+</div>
+<div class="funds-data-wrapper funds-data-item hidden" data-funds-data-subscriber="false">
+<span class="title">Conheça a região do HTMX11</span>
+<p class="description">Tenha os dados consolidados da região, atuais e dos últimos 2 anos, para você analisar.</p>
+<a class="link" href="https://lp.fundsexplorer.com.br/funds-data/" target="_blank">Ver região</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="bulletin">
+<div class="row">
+<div class="col-md-12">
+<div class="section-head toggle up">
+<h2 class="section-title">Comunicados <span>do HTMX11</span></h2>
+<a class="section-toggle up" href="javascript:;"></a>
+</div>
+<div class="section-body">
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div class="table-responsive">
+<table class="table table-hover">
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="related-fiis">
+<div class="row">
+<div class="col-md-12">
+<div class="section-head toggle up">
+<h2 class="section-title">FIIs Relacionados <span>ao HTMX11</span></h2>
+<a class="section-toggle up" href="javascript:;"></a>
+</div>
+<div class="section-body">
+<div data-flickity='{
+              "autoPlay": 4000,
+              "prevNextButtons": false,
+              "groupCells": true,
+              "contain": true
+            }' id="related-fiis-carousel">
+<div class="carousel-cell">
+<div class="item" id="item-MGHT11">
+<div class="bg-wrapper"></div>
+<a href="/funds/mght11">
+<span class="symbol">MGHT11</span>
+<div class="name-wrapper">
+<span class="name">FDO. INV. IMOB. MOGNO HOTEIS</span>
+</div>
+</a>
+<span class="admin-title">Adm.</span>
+<span class="admin">
+                      BTG Pactual</span>
+</div>
+</div>
+<div class="carousel-cell">
+<a href="https://lp.fundsexplorer.com.br/carteira-de-investimento-em-fiis/" target="_blank">
+<div class="item" id="item-ad">
+<div class="bg-wrapper"></div>
+<p><b>Assine</b> e tenha acesso aos nossos Relatórios e à nossa Carteira Recomendada</p>
+<div class="btn">
+<img alt="Saiba mais" src="/assets/funds-ads/arrow-277d9643741824848c8e885f1815cd192c00953dac11e12a8d94a84c61e91c86.png"/>
+<span>Saiba mais</span>
+</div>
+</div>
+</a>
+</div>
+<div class="carousel-cell">
+<div class="item" id="item-XPHT11">
+<div class="bg-wrapper"></div>
+<a href="/funds/xpht11">
+<span class="symbol">XPHT11</span>
+<div class="name-wrapper">
+<span class="name">XP HOTÉIS - FDO INV IMOB - FII</span>
+</div>
+</a>
+<span class="admin-title">Adm.</span>
+<span class="admin">
+                      Geração Futuro</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="discussion">
+<div class="row">
+<div class="col-md-12">
+<div class="section-head toggle up">
+<h2 class="section-title">Discussão <span>do HTMX11</span></h2>
+<a class="section-toggle up" href="javascript:;"></a>
+</div>
+<div class="section-body">
+<div class="row">
+<div class="col-md-12 col-xs-12 disqus-wrapper" data-identifier="htmx11"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div id="modal-lista-vip">
+<a class="open-modal" href="#"><img alt="Abrir" src="/assets/funds-ads/arrow-3-1390af7ebc535cf284f6f24e7e946ffc69df7878624212a2400db39b016b9471.png"/></a>
+<a class="close-modal" href="#"><img alt="Fechar" src="/assets/funds-ads/close-b520a145d947298a654ba96fa64dd9e090b7d06a071a100a20eb9567c39e9737.png"/></a>
+<div class="text-infos">
+<span class="title">Entrar para nossa Lista VIP</span>
+<span class="subtitle">Dê um passo a frente como investidor</span>
+</div>
+<form action="#" method="post">
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div class="form-group text-center">
+<input class="form-control fe-input modal-lista-vip-input" id="name" name="name" placeholder="Qual é seu nome?" required="" type="text"/>
+<input class="form-control fe-input modal-lista-vip-input" id="email" name="email" placeholder="Seu melhor email" required="" type="email"/>
+<button class="btn form-control fe-input" data-placement="top" data-toggle="tooltip" data-trigger="manual" id="btn-save-modal-lista-vip" title="" type="submit">Cadastrar</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div class="main-popup-backdrop"></div>
+<div class="main-popup-image">
+<img alt="Relatório" src="/assets/funds-ads/main-popup-report-aee9c942412c6b5edb1633e21f35df818c0bd712b3bdd180f7f292ab16424abd.svg"/>
+<button class="close-button">X</button>
+</div>
+<div class="main-popup">
+<span class="free-report">Relatório Gratuito</span>
+<span class="title">
+          Saiba tudo sobre o
+          <span class="fund"></span>
+</span>
+<p class="description">Neste relatório trazemos informações extras sobre o FII que você está analisando.</p>
+<div class="form-wrapper">
+<input class="name-input" name="name" placeholder="Nome" required="" type="text">
+<input class="email-input" name="email" placeholder="E-mail" required="" type="email">
+<button class="send" type="submit">Quero fazer o download</button>
+</input></input></div>
+</div>
+</section>
+<div class="modal fade" id="modal-response" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<img alt="Confirmar" class="confirm hidden" src="/assets/icons/modal-confirm-96a52b33487908369c8e4267957e43f60456ea2c0e48851925147f5e48ba934c.png"/>
+<img alt="Cancelar" class="cancel hidden" src="/assets/icons/modal-cancel-fb46fcdb038a32bc8dfd18f002568f3985b856f1d08993e062e2eb667d4486ab.png"/>
+<span class="modal-title"></span>
+<p class="modal-description"></p>
+</div>
+<div class="modal-footer">
+<button class="btn btn-default modal-btn-cancel" data-dismiss="modal" type="button">Cancelar</button>
+<button class="btn btn-primary modal-btn-action" type="button"></button>
+</div>
+</div>
+</div>
+</div>
+<div id="popup-background" onclick="closePopup(this, event)">
+<div id="popup">
+<div id="popup-left-content">
+<img src="/assets/icons/excel-mockup-32b26bc8ae3c648264dd8646653505d4094a136c193b5b32a62ebe5eb901874f.png" width="498px"/>
+</div>
+<div id="popup-right-content">
+<span id="popup-upper-title">PLANILHA GRATUITA</span>
+<span id="popup-title">Saiba quanto você<br/>precisa poupar para<br/>viver de FIIs</span>
+<span id="popup-sub-title">Faça o seu controle financeiro e descubra<br/>quanto tempo falta para alcançar a sua<br/>independência financeira</span>
+<form id="popup-form" onsubmit="popupSendZap(event)">
+<div id="popup-input-email">
+<svg fill="none" height="16" viewbox="0 0 15 16" width="15" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect fill="url(#pattern0)" height="16" width="14.9219"></rect>
+<defs>
+<pattern height="1" id="pattern0" patterncontentunits="objectBoundingBox" width="1">
+<use transform="translate(-0.0361264) scale(0.0670158 0.0625)" xlink:href="#image0"></use>
+</pattern>
+<image height="16" id="image0" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABEZVhJZk1NACoAAAAIAAIBEgADAAAAAQABAACHaQAEAAAAAQAAACYAAAAAAAKgAgAEAAAAAQAAABCgAwAEAAAAAQAAABAAAAAA/iXkXAAAARVJREFUeAG9U9ttwkAQ3Lsj+Y1LiDtIOjAVxKECSqADkwoiKgAqgA7MowDoAAsacAHcLbPASRbmAAuJlSyNtDszOysf0ZOlPEjzzSc1qGk7Lo4CIEbKmAkxJdSsCnb2u0VkEiErppFjO3+EqY35YaYU3BQCNgIgVtTV2pTO2j+sV14jyrYgZyfyWcwDdjxGo6e0WWEwqZN3ifRkRmZrAvr9LUOmWDAG885yl3nXzmL7rzTnJyPbJnL9moCUXFYOA4cBvv7vfLupuA6kh5lZldO6XPWcvwfnKchD73pJDApUhIQQS4TQUWsRAkLlrf5dgUBFHkiEQgDv92scrWwmYGfHt4CcX1imq5X6eFCA8NeOQ4d9bR0A68aGjz2J1AEAAAAASUVORK5CYII="/>
+</defs>
+</svg>
+<input placeholder="Email" required="" type="email"/>
+<input id="popup-input-submit" type="submit" value="Baixar planilha"/>
+</div>
+</form>
+</div>
+<div id="popup-dot-1"></div>
+<div id="popup-dot-2"></div>
+<div id="popup-dot-3"></div>
+<div id="popup-dot-4"></div>
+<div id="popup-close-button">
+<svg fill="none" height="17" onclick="closePopup(this, event)" viewbox="0 0 18 17" width="18" xmlns="http://www.w3.org/2000/svg">
+<line onclick="closePopup(this, event)" stroke="#D1D1D1" x1="1.35355" x2="17.3536" y1="0.646447" y2="16.6464"></line>
+<line onclick="closePopup(this, event)" stroke="#D1D1D1" x1="0.646447" x2="16.6464" y1="16.6464" y2="0.646444"></line>
+</svg>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div id="social-media-links">
+<a href="https://www.facebook.com/fundsexplorer/"><img alt="Logo do Facebook" src="/assets/icons/facebook-569c8e830c0095155bb154859a1153e00bfbda7472ca5e2f5abb5f0102343d32.png"/></a>
+<a href="https://twitter.com/FundsExplorer"><img alt="Logo do Twitter" src="/assets/icons/twitter-a2cc07e2da5f422bb62b9fb6aec721215f269eedb70ab32bcd91fbfee6ca527c.png"/></a>
+<a href="https://www.youtube.com/c/FundsExplorer"><img alt="Logo do Youtube" src="/assets/icons/youtube-53ca0b872e458e1b38e5a710ea72749fb527a9c693e929dfe0ec0d56149df8e1.png"/></a>
+<a href="https://www.instagram.com/fundsexplorer/"><img alt="Logo do Instagram" src="/assets/icons/instagram-5b71e434f89bf3be1c7049d8912a5314b090797498cee9b959eb8e125b6cc74b.png"/></a>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div id="informative-links">
+<a href="https://lp.fundsexplorer.com.br/carteira-de-investimento-em-fiis/" target="_blank"> Assinatura Funds Explorer</a>
+<span>|</span>
+<a href="https://lp.fundsexplorer.com.br/funds-data/" target="_blank"> Funds Data Buildings</a>
+<span>|</span>
+<a href="/contato">Contato</a>
+<span>|</span>
+<a href="/termos-de-uso"> Termos de Uso</a>
+<span>|</span>
+<a href="/politica-de-privacidade"> Política de Privacidade</a>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div id="copyright-top">
+<p>Este website tem como único objetivo fornecer informações sobre ferramentas, veículos e produtos de investimentos. Nenhuma parte do conteúdo disponibilizado por meio deste website, deve ser interpretada como aconselhamento ou recomendação para investimento. Orientações neste sentido devem ser obtidas por instituições e profissionais, credenciados e devidamente habilitados.</p>
+<br/>
+<p>Todos os materiais exibidos neste website estão protegidos pelas leis de Propriedade Intelectual e não podem ser reproduzidos e/ou distribuídos sem a expressa autorização do Funds Explorer.</p>
+<br/>
+<p>O Funds Explorer não se responsabiliza por informações publicadas em links externos que estejam contidos neste website.</p>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<div id="copyright-bottom">
+<span>Funds Explorer © 2016-2021</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script data-turbolinks-track="false" src="/assets/redesign/vendor-1f9fc22010ddda0d98418188f5e1d1c9e6322169e0ce8b8e80b761c8ffb901f1.js"></script>
+<script data-turbolinks-track="false" src="/assets/redesign/application-41e374211a8ea37841a1355ff93aaa8d532a11ac30ed37f0cec7b8eab7c2a49f.js"></script>
+<script data-turbolinks-track="false" src="/assets/redesign/pages/funds/show-28473682b9c067e35a91437dcf894aab4e06e88b4173e69f4a44e007fb83ff59.js"></script>
+<script type="text/javascript">
+  // exibicao de ativos do fii
+  var assetsLength = 24;
+  if (assetsLength > 0) {
+    if (assetsLength == 2) {
+      assetsWidthMultiplier = 2;
+    } else {
+      assetsWidthMultiplier = assetsLength / 2;
+    }
+
+    if (assetsLength > 4) {
+      $('#funds-show #fund-actives-items').css('width', Math.ceil(assetsWidthMultiplier) * (parseFloat($('#funds-show #fund-actives-items .items-wrapper').css('width')) + 4));
+    }
+  }
+</script>
+<script btdata-turbolinks-track="false" src="/assets/redesign/base/google-maps-e85c1c16c5489c7a80494d62066448079d6e4409a8fd8205f5573b3837492f44.js"></script>
+<script type="text/javascript">
+
+  $('#fund-actives-map-bg').on('click', function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//maps.google.com/maps/api/js?key=AIzaSyDa9r9tsRoQeH9844YgHeDLYyGwvauMH-g';
+    (d.head || d.body).appendChild(s);
+
+    $(this).addClass('hidden');
+
+    s.onload = function() {
+      $('#fund-actives-map').removeClass('hidden');
+
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: {id: 'fund-actives-map'}}, function(){
+        var markers = handler.addMarkers([{"lat":-23.5935681,"lng":-46.6889078,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eEstanplaza Funchal\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eR. Funchal 281, 27 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eVila Olimpia\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e790,37 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.608578,"lng":-46.660199,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eEstanplaza Ibirapuera\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eAv. Jandira 501, 13 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eMoema\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e399,50 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.6043802,"lng":-46.6921537,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eEstanplaza Berrini\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eAv. Eng. Luís Carl os Berrini 853, 19 flats \u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eItaim Bibi\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e578,52 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.6100547,"lng":-46.6954599,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eGran Estanplaza\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Arizona 1517, 28 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eCidade Moncões\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e885,18 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.581111,"lng":-46.6784944,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eMeliá Jardim Europa\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua João Cachoeira 111, 7 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eItaim Bibi\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e230,96 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.6063713,"lng":-46.6643459,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eIntercity Premium Ibirapuera\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eAv. Ibirapuera 2577, 10 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eIndianópolis\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e266,00 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.5571413,"lng":-46.6620688,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eIbis São Paulo Paulista\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eAv. Paulista 2355, 8 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eBela Vista\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e141,60 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.5549455,"lng":-46.6615318,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eIbis Budget Paulista\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua da Consolação 2303, 16 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eConsolação\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e203,52 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.570363,"lng":-46.691789,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eIbis Styles Faria Lima\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Tavares Cabral 61, 74 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003ePinheiros\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e1.360,86 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.5550181,"lng":-46.6615482,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eBlue Tree Faria Lima\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua da Consolação 2303, 29 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eConsolação\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e354,26 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.555732,"lng":-46.6597186,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eTryp Paulista\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Haddok Lobo 294, 21 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eCerqueira César\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e632,70 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.584005,"lng":-46.675506,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eStaybridge Suites\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Bandeira Paulista 555, 61 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eItaim Bibi\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e12,69 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.603244,"lng":-46.693332,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eEstanplaza Nações Unidas\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Guararapes 1889, 5 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eBrooklin Novo\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e199,91 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.6299813,"lng":-46.7064741,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eEstanplaza International\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Fernandes Moreira 1293, 38 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eChácara Santo Antonio\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e1.112,74 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.609149,"lng":-46.6950649,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eWyndham Berrini\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Heinrich Hertz 14, 9 Flats \u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eBrooklin Novo\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e261,27 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.6294977,"lng":-46.7071353,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eIntercity Nações Unidas\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Fernandes Moreira 1371, 15 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eChácara Santo Antonio\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e422,09 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.6034297,"lng":-46.6936302,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eIntercity Premium Berrini\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Alcides Lourenço da Rocha 136, 3 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eBrooklin Novo\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e83,09 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.5727389,"lng":-46.665251,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eIbis Budget Jardins\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eAv. Nove de Julho 3957, 20 Flats \u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eJardim Paulista\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e262,98 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.5857984,"lng":-46.6362193,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eComfort Nova Paulista\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Vergueiro 2740, 2 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eVila Mariana\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e94.656,00 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.5833592,"lng":-46.679626,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eTryp Itaim\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Manoel Guedes 320, 3 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eItaim Bibi\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e180,13 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.5849822,"lng":-46.6816631,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eTryp Iguatemi\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Iguatemi 150, 9 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eItaim Bibi\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e259,02 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.6022175,"lng":-46.6932709,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eTryp Berrini\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eRua Quintana 963, 7 Flats\u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eCidade Monções\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e197,47 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"},{"lat":-23.5660514,"lng":-46.6537539,"picture":{"url":"https://s3-sa-east-1.amazonaws.com/teste-imgs/if_skyscraper-04_1989011.png","width":32,"height":48},"infowindow":"\u003cdiv class=\"col-lg-12 col-md-12\"\u003e\n  \u003cdl class=\"dl-horizontal\"\u003e\n    \u003cdt\u003e\u003ca href=\"/funds/htmx11\"\u003eHTMX11\u003c/a\u003e\u003c/dt\u003e \u003cdd\u003e\u003c/dd\u003e\n\n    \u003cdt\u003eImóvel\u003c/dt\u003e \u003cdd\u003eNobile Paulista Prime\u003c/dd\u003e\n\n    \u003cdt\u003eEndereço\u003c/dt\u003e \u003cdd\u003eAlameda Campinas 540, 10 Flats \u003c/dd\u003e\n\n    \u003cdt\u003eBairro\u003c/dt\u003e \u003cdd\u003eJardim Paulista\u003c/dd\u003e\n\n    \u003cdt\u003eCidade\u003c/dt\u003e \u003cdd\u003eSão Paulo - SP\u003c/dd\u003e\n\n\n\n    \u003cdt\u003eÁrea Bruta Locável\u003c/dt\u003e \u003cdd\u003e273,40 m\u003csup\u003e2\u003c/sup\u003e\u003c/dd\u003e\n\n\n  \u003c/dl\u003e\n\u003c/div\u003e","marker_title":"HTMX11"}]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    }
+  });
+</script>
+<script>
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="https://my.hellobar.com/a1ba85854cd77f119e4dfb20f402fb4dee27081d.js" type="text/javascript"></script>
+</body>
+</html>
