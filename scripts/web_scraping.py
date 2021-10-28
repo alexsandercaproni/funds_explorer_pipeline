@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(0, "/Users/alexsandercaproni/Documents/python_projects/scraping_funds_explorer")
-from scripts.common_vars import funds
+from scripts.utils.common_vars import funds
 
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
