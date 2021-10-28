@@ -2,7 +2,7 @@
 
 <html lang="pt-br">
 <head>
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"7ae9c6eb2d","applicationID":"1576126089","transactionName":"IAkLQhFbWVUBQhdKVwcDFl8EWhpfEV5cSx0QDgpB","queueTime":2,"applicationTime":11,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"7ae9c6eb2d","applicationID":"1576126089","transactionName":"IAkLQhFbWVUBQhdKVwcDFl8EWhpfEV5cSx0QDgpB","queueTime":4,"applicationTime":9,"agent":""}</script>
 <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"7ae9c6eb2d",applicationID:"1576126089"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1211.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
 <title>VISC11 - VINCI SHOPPING CENTERS FDO INVEST IMOB - FII - Funds Explorer</title>
 <!-- Facebook Pixel Code -->
@@ -91,7 +91,7 @@
 <meta content="#ffffff" name="theme-color"/>
 <link data-turbolinks-track="false" href="/assets/redesign/application-b8df72d2851b422ea7bc86771f5fbf066a21e35cf6df0f3e3026f89bd27d67ad.css" media="all" rel="stylesheet">
 <meta content="authenticity_token" name="csrf-param">
-<meta content="r3mLdKI6tN/S3GELaM8xRu0KPZWwH/rVEKhmDVfTURX0+bG7FjAMs1jEW+oxNvVSmQYzeIj4Aayn1RFfvdnBuw==" name="csrf-token">
+<meta content="QniLN6nVih230yoJrQ0yYUlCfoBmVKaMR99oNAA8ER2ObI6ceAo2qxe8T2QBT7Y17wx8T9o++f4x0wtzeMbHZw==" name="csrf-token">
 </meta></meta></link></meta></link></meta></head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -174,7 +174,7 @@
 <div class="close-signin-signup-wrapper">
 <a class="close-signin-signup" href="javascript:;" id="close-signin"><img alt="Fechar login" src="/assets/icons/fechar-b42fc0c933cfffdbf591556fc1b9f2dc2ed1601e6b39ae0c48289bcf6802b1fe.png"/></a>
 </div>
-<form accept-charset="UTF-8" action="/users/sign_in" id="form-signin" method="post"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="tVVofWAdHDkGYvd/+L9/kbkLbL4I0rs8NAVM+sVQEWHu1VKy1BekVYx6zZ6hRruFzQdiUzA1QEWDeDuoL1qBzw=="/>
+<form accept-charset="UTF-8" action="/users/sign_in" id="form-signin" method="post"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="tc+884NZgjIzKqou92XBf3yTzbNm8CSCm91vd7V6pH9527lYUoY+hJNFz0NbJ0Ur2t3PfNqae/Dt0QwwzYByBQ=="/>
 <span id="signin-title">Identifique-se</span>
 <div class="row">
 <div class="form-group col-md-12 col-xs-12">
@@ -211,7 +211,7 @@
 </div>
 </div>
 </div>
-</form> <form accept-charset="UTF-8" action="/users/password" id="form-reset-password" method="post"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="4Rz5ALCnMR0pQEiBuChf/CfyblKOmC9DoOjjtlGyaLK6nMPPBK2JcaNYcmDh0ZvoU/5gv7Z/1DoXlZTku7j4HA=="/>
+</form> <form accept-charset="UTF-8" action="/users/password" id="form-reset-password" method="post"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="pj/TeMsgXhBzHZmS+N7SjjZA97OlWB6irsNXHo7nv6VqK9bTGv/iptNy/P9UnFbakA71fBkyQdDYzzRZ9h1p3w=="/>
 <span id="reset-password-title">Esqueceu sua senha?</span>
 <div class="row">
 <div class="form-group col-md-12 col-xs-12">
@@ -234,7 +234,7 @@
 <a class="close-signin-signup" href="javascript:;" id="close-signup"><img alt="Fechar login" src="/assets/icons/fechar-b42fc0c933cfffdbf591556fc1b9f2dc2ed1601e6b39ae0c48289bcf6802b1fe.png"/></a>
 </div>
 <span id="signup-title">Criar uma conta grátis!</span>
-<form accept-charset="UTF-8" action="/users" id="form-signup" method="post"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="D1WGM2PEEu7DvNYPl93FcMzT+SiGSMuh50MlpNnf+4JU1bz8186qgkmk7O7OJAFkuN/3xb6vMNhQPlL2M9VrLA=="/>
+<form accept-charset="UTF-8" action="/users" id="form-signup" method="post"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="8Z1QzAEbB8mH5YKc4VcnMcvPeZAXCi7MjibEiejlJJ89iVVn0MS7fyeK5/FNFaNlbYF7X6tgcb74KqfOkB/y5Q=="/>
 <div class="row">
 <div class="form-group col-md-12 col-xs-12">
 <input autocomplete="name" autofocus="autofocus" class="fe-input signin-signup-input form-control tooltip-error name" data-placement="left" data-toggle="tooltip" data-trigger="manual" id="name-signup" name="user[name]" placeholder="Seu nome" type="text"/>
@@ -972,10 +972,10 @@
 <div id="stock-price-wrapper">
 <div id="stock-price">
 <span class="price">
-                  R$ 101,08
+                  R$ 100,19
               </span>
 <span class="percentage negative">
-                -1,21%
+                -0,88%
               </span>
 </div>
 </div>
@@ -996,7 +996,7 @@
 <div class="carousel-cell">
 <span class="indicator-title">Liquidez Diária</span>
 <span class="indicator-value">
-                15.742
+                18.992
               </span>
 <span class="indicator-value-unit">negociações</span>
 </div>
@@ -1033,7 +1033,7 @@
 <div class="carousel-cell">
 <span class="indicator-title">P/VP</span>
 <span class="indicator-value">
-                0,85
+                0,84
               </span>
 </div>
 </div>
@@ -1452,11 +1452,11 @@ O Vinci Shopping Centers FII como parte de sua estratégia de investimento, priv
 </tr>
 <tr>
 <td>Em relação ao valor de cota atual</td>
-<td>0,57%</td>
-<td>1,61%</td>
-<td>2,62%</td>
-<td>5,30%</td>
-<td>24,33%</td>
+<td>0,58%</td>
+<td>1,63%</td>
+<td>2,64%</td>
+<td>5,34%</td>
+<td>24,55%</td>
 </tr>
 </tbody>
 </table>
@@ -1872,57 +1872,17 @@ O Vinci Shopping Centers FII como parte de sua estratégia de investimento, priv
               "contain": true
             }' id="related-fiis-carousel">
 <div class="carousel-cell">
-<div class="item" id="item-SHPH11">
+<div class="item" id="item-FLRP11">
 <div class="bg-wrapper"></div>
-<a href="/funds/shph11">
-<span class="symbol">SHPH11</span>
+<a href="/funds/flrp11">
+<span class="symbol">FLRP11</span>
 <div class="name-wrapper">
-<span class="name">FDO INV IMOB SHOPPING PÁTIO HIGIENÓPOLIS</span>
+<span class="name">FDO INV IMOB - FII FLORIPA SHOPPING</span>
 </div>
 </a>
 <span class="admin-title">Adm.</span>
 <span class="admin">
-                      Rio Bravo</span>
-</div>
-</div>
-<div class="carousel-cell">
-<div class="item" id="item-SCPF11">
-<div class="bg-wrapper"></div>
-<a href="/funds/scpf11">
-<span class="symbol">SCPF11</span>
-<div class="name-wrapper">
-<span class="name">FDO INV IMOB SCP</span>
-</div>
-</a>
-<span class="admin-title">Adm.</span>
-<span class="admin">
-                      Unitas</span>
-</div>
-</div>
-<div class="carousel-cell">
-<a href="https://lp.fundsexplorer.com.br/carteira-de-investimento-em-fiis/" target="_blank">
-<div class="item" id="item-ad">
-<div class="bg-wrapper"></div>
-<p><b>Assine</b> e tenha acesso aos nossos Relatórios e à nossa Carteira Recomendada</p>
-<div class="btn">
-<img alt="Saiba mais" src="/assets/funds-ads/arrow-277d9643741824848c8e885f1815cd192c00953dac11e12a8d94a84c61e91c86.png"/>
-<span>Saiba mais</span>
-</div>
-</div>
-</a>
-</div>
-<div class="carousel-cell">
-<div class="item" id="item-ELDO11B">
-<div class="bg-wrapper"></div>
-<a href="/funds/eldo11b">
-<span class="symbol">ELDO11B</span>
-<div class="name-wrapper">
-<span class="name">FDO INV IMOB - FII ELDORADO</span>
-</div>
-</a>
-<span class="admin-title">Adm.</span>
-<span class="admin">
-                      Rio Bravo</span>
+                      BTG Pactual</span>
 </div>
 </div>
 <div class="carousel-cell">
@@ -1940,12 +1900,12 @@ O Vinci Shopping Centers FII como parte de sua estratégia de investimento, priv
 </div>
 </div>
 <div class="carousel-cell">
-<div class="item" id="item-HMOC11">
+<div class="item" id="item-HGBS11">
 <div class="bg-wrapper"></div>
-<a href="/funds/hmoc11">
-<span class="symbol">HMOC11</span>
+<a href="/funds/hgbs11">
+<span class="symbol">HGBS11</span>
 <div class="name-wrapper">
-<span class="name">HEDGE SHOPPING PRAÇA DA MOÇA FDO INV IMOB</span>
+<span class="name">HEDGE BRASIL SHOPPING FDO INV IMOB</span>
 </div>
 </a>
 <span class="admin-title">Adm.</span>
@@ -1954,40 +1914,12 @@ O Vinci Shopping Centers FII como parte de sua estratégia de investimento, priv
 </div>
 </div>
 <div class="carousel-cell">
-<div class="item" id="item-VSHO11">
+<div class="item" id="item-JRDM11">
 <div class="bg-wrapper"></div>
-<a href="/funds/vsho11">
-<span class="symbol">VSHO11</span>
+<a href="/funds/jrdm11">
+<span class="symbol">JRDM11</span>
 <div class="name-wrapper">
-<span class="name">FDO INV IMOB VOTORANTIM SHOPPING</span>
-</div>
-</a>
-<span class="admin-title">Adm.</span>
-<span class="admin">
-                      Votorantim Asset</span>
-</div>
-</div>
-<div class="carousel-cell">
-<div class="item" id="item-FIGS11">
-<div class="bg-wrapper"></div>
-<a href="/funds/figs11">
-<span class="symbol">FIGS11</span>
-<div class="name-wrapper">
-<span class="name">FDO INV IMOB GENERAL SHOPPING ATIVO E RENDA - FII</span>
-</div>
-</a>
-<span class="admin-title">Adm.</span>
-<span class="admin">
-                      Socopa</span>
-</div>
-</div>
-<div class="carousel-cell">
-<div class="item" id="item-FLRP11">
-<div class="bg-wrapper"></div>
-<a href="/funds/flrp11">
-<span class="symbol">FLRP11</span>
-<div class="name-wrapper">
-<span class="name">FDO INV IMOB - FII FLORIPA SHOPPING</span>
+<span class="name">FII SHOPPING JARDIM SUL</span>
 </div>
 </a>
 <span class="admin-title">Adm.</span>
@@ -1996,31 +1928,99 @@ O Vinci Shopping Centers FII como parte de sua estratégia de investimento, priv
 </div>
 </div>
 <div class="carousel-cell">
-<div class="item" id="item-XPML11">
+<div class="item" id="item-ELDO11B">
 <div class="bg-wrapper"></div>
-<a href="/funds/xpml11">
-<span class="symbol">XPML11</span>
+<a href="/funds/eldo11b">
+<span class="symbol">ELDO11B</span>
 <div class="name-wrapper">
-<span class="name">XP MALLS FDO INV IMOB FII</span>
+<span class="name">FDO INV IMOB - FII ELDORADO</span>
+</div>
+</a>
+<span class="admin-title">Adm.</span>
+<span class="admin">
+                      Rio Bravo</span>
+</div>
+</div>
+<div class="carousel-cell">
+<a href="https://lp.fundsexplorer.com.br/carteira-de-investimento-em-fiis/" target="_blank">
+<div class="item" id="item-ad">
+<div class="bg-wrapper"></div>
+<p><b>Assine</b> e tenha acesso aos nossos Relatórios e à nossa Carteira Recomendada</p>
+<div class="btn">
+<img alt="Saiba mais" src="/assets/funds-ads/arrow-277d9643741824848c8e885f1815cd192c00953dac11e12a8d94a84c61e91c86.png"/>
+<span>Saiba mais</span>
+</div>
+</div>
+</a>
+</div>
+<div class="carousel-cell">
+<div class="item" id="item-WPLZ11">
+<div class="bg-wrapper"></div>
+<a href="/funds/wplz11">
+<span class="symbol">WPLZ11</span>
+<div class="name-wrapper">
+<span class="name">FDO INV IMOB - FII SHOPPING WEST PLAZA</span>
+</div>
+</a>
+<span class="admin-title">Adm.</span>
+<span class="admin">
+                      Hedge Investments</span>
+</div>
+</div>
+<div class="carousel-cell">
+<div class="item" id="item-FVPQ11">
+<div class="bg-wrapper"></div>
+<a href="/funds/fvpq11">
+<span class="symbol">FVPQ11</span>
+<div class="name-wrapper">
+<span class="name">FDO INV IMOB VIA PARQUE SHOPPING - FII</span>
+</div>
+</a>
+<span class="admin-title">Adm.</span>
+<span class="admin">
+                      Rio Bravo</span>
+</div>
+</div>
+<div class="carousel-cell">
+<div class="item" id="item-LASC11">
+<div class="bg-wrapper"></div>
+<a href="/funds/lasc11">
+<span class="symbol">LASC11</span>
+<div class="name-wrapper">
+<span class="name">LEGATUS SHOPPINGS FDO. INV. IMOB. - FII</span>
+</div>
+</a>
+<span class="admin-title">Adm.</span>
+<span class="admin">
+                      Vortx</span>
+</div>
+</div>
+<div class="carousel-cell">
+<div class="item" id="item-RBGS11">
+<div class="bg-wrapper"></div>
+<a href="/funds/rbgs11">
+<span class="symbol">RBGS11</span>
+<div class="name-wrapper">
+<span class="name">RB CAPITAL GENERAL SHOP SULACAP FDO INV IMOB - FII</span>
+</div>
+</a>
+<span class="admin-title">Adm.</span>
+<span class="admin">
+                      Oliveira Trust</span>
+</div>
+</div>
+<div class="carousel-cell">
+<div class="item" id="item-PQDP11">
+<div class="bg-wrapper"></div>
+<a href="/funds/pqdp11">
+<span class="symbol">PQDP11</span>
+<div class="name-wrapper">
+<span class="name">FDO INV IMOB - FII PARQUE D. PEDRO SHOPPING CENTER</span>
 </div>
 </a>
 <span class="admin-title">Adm.</span>
 <span class="admin">
                       BTG Pactual</span>
-</div>
-</div>
-<div class="carousel-cell">
-<div class="item" id="item-MALL11">
-<div class="bg-wrapper"></div>
-<a href="/funds/mall11">
-<span class="symbol">MALL11</span>
-<div class="name-wrapper">
-<span class="name">MALLS BRASIL PLURAL FDO INV IMOB</span>
-</div>
-</a>
-<span class="admin-title">Adm.</span>
-<span class="admin">
-                      Geração Futuro</span>
 </div>
 </div>
 </div>
