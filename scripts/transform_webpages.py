@@ -15,6 +15,10 @@ def transform_html_files(soup, trusted_path, fund_name):
     # Create a directory
     fund_dict = {}
 
+    # Code
+    code = [code.text.strip() for code in soup.find_all('h1', {'class' : 'section-title'})]
+    fund_dict['code'] = code
+
     # Name
     name = [name.text.strip() for name in soup.find_all('h3', {'class' : 'section-subtitle'})]
     fund_dict['name'] =  name[0]
